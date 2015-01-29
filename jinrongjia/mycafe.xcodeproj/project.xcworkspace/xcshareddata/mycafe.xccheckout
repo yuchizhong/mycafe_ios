@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>704FD8E9-7ABC-40AB-B6D8-156BC3CE641E</string>
+	<string>31E211FD-47C1-4AB9-A381-9BCC8B7E5C6F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>UniCafe</string>
+	<string>mycafe</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4E2EC6B335F9F08D2931FD6031CFB7737F7D0CEA</key>
 		<string>https://github.com/yuchizhong/mycafe.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>UniCafe.xcodeproj</string>
+	<string>mycafe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4E2EC6B335F9F08D2931FD6031CFB7737F7D0CEA</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>4E2EC6B335F9F08D2931FD6031CFB7737F7D0CEA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>mycafe</string>
+			<string>jinrongjia</string>
 		</dict>
 	</array>
 </dict>
