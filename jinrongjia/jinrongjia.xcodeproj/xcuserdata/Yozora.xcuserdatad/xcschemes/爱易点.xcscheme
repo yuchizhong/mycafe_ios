@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AB05427519EA678300D86BC7"
                BuildableName = "&#x7231;&#x6613;&#x70b9;.app"
-               BlueprintName = "mycafe"
-               ReferencedContainer = "container:mycafe.xcodeproj">
+               BlueprintName = "jinrongjia"
+               ReferencedContainer = "container:jinrongjia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AB05428E19EA678300D86BC7"
-               BuildableName = "mycafeTests.xctest"
-               BlueprintName = "mycafeTests"
-               ReferencedContainer = "container:mycafe.xcodeproj">
+               BuildableName = "jinrongjiaTests.xctest"
+               BlueprintName = "jinrongjiaTests"
+               ReferencedContainer = "container:jinrongjia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AB05428E19EA678300D86BC7"
-               BuildableName = "mycafeTests.xctest"
-               BlueprintName = "mycafeTests"
-               ReferencedContainer = "container:mycafe.xcodeproj">
+               BuildableName = "jinrongjiaTests.xctest"
+               BlueprintName = "jinrongjiaTests"
+               ReferencedContainer = "container:jinrongjia.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB05427519EA678300D86BC7"
             BuildableName = "&#x7231;&#x6613;&#x70b9;.app"
-            BlueprintName = "mycafe"
-            ReferencedContainer = "container:mycafe.xcodeproj">
+            BlueprintName = "jinrongjia"
+            ReferencedContainer = "container:jinrongjia.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB05427519EA678300D86BC7"
             BuildableName = "&#x7231;&#x6613;&#x70b9;.app"
-            BlueprintName = "mycafe"
-            ReferencedContainer = "container:mycafe.xcodeproj">
+            BlueprintName = "jinrongjia"
+            ReferencedContainer = "container:jinrongjia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,8 +95,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB05427519EA678300D86BC7"
             BuildableName = "&#x7231;&#x6613;&#x70b9;.app"
-            BlueprintName = "mycafe"
-            ReferencedContainer = "container:mycafe.xcodeproj">
+            BlueprintName = "jinrongjia"
+            ReferencedContainer = "container:jinrongjia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

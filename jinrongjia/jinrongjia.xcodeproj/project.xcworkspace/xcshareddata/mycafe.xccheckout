@@ -14,11 +14,11 @@
 		<string>https://github.com/yuchizhong/mycafe.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>mycafe.xcodeproj</string>
+	<string>jinrongjia/mycafe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4E2EC6B335F9F08D2931FD6031CFB7737F7D0CEA</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/yuchizhong/mycafe.git</string>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>4E2EC6B335F9F08D2931FD6031CFB7737F7D0CEA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>jinrongjia</string>
+			<string>mycafe</string>
 		</dict>
 	</array>
 </dict>

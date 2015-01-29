@@ -51,10 +51,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>有你咖啡需要您的位置以搜索附近的咖啡馆</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>有你咖啡需要您的位置以搜索附近的咖啡馆</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

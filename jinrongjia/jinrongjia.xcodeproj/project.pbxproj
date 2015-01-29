@@ -172,7 +172,7 @@
 		AB05428419EA678300D86BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB05428619EA678300D86BC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AB05428919EA678300D86BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		AB05428F19EA678300D86BC7 /* mycafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mycafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB05428F19EA678300D86BC7 /* jinrongjiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jinrongjiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB05429419EA678300D86BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB05429519EA678300D86BC7 /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
 		AB0AADFA1A591DFD009DC134 /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
@@ -430,7 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				AB05427619EA678300D86BC7 /* 爱易点.app */,
-				AB05428F19EA678300D86BC7 /* mycafeTests.xctest */,
+				AB05428F19EA678300D86BC7 /* jinrongjiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -924,9 +924,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB05427519EA678300D86BC7 /* mycafe */ = {
+		AB05427519EA678300D86BC7 /* jinrongjia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB05429919EA678300D86BC7 /* Build configuration list for PBXNativeTarget "mycafe" */;
+			buildConfigurationList = AB05429919EA678300D86BC7 /* Build configuration list for PBXNativeTarget "jinrongjia" */;
 			buildPhases = (
 				AB05427219EA678300D86BC7 /* Sources */,
 				AB05427319EA678300D86BC7 /* Frameworks */,
@@ -936,14 +936,14 @@
 			);
 			dependencies = (
 			);
-			name = mycafe;
+			name = jinrongjia;
 			productName = "爱易点";
 			productReference = AB05427619EA678300D86BC7 /* 爱易点.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB05428E19EA678300D86BC7 /* mycafeTests */ = {
+		AB05428E19EA678300D86BC7 /* jinrongjiaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB05429C19EA678300D86BC7 /* Build configuration list for PBXNativeTarget "mycafeTests" */;
+			buildConfigurationList = AB05429C19EA678300D86BC7 /* Build configuration list for PBXNativeTarget "jinrongjiaTests" */;
 			buildPhases = (
 				AB05428B19EA678300D86BC7 /* Sources */,
 				AB05428C19EA678300D86BC7 /* Frameworks */,
@@ -954,9 +954,9 @@
 			dependencies = (
 				AB05429119EA678300D86BC7 /* PBXTargetDependency */,
 			);
-			name = mycafeTests;
+			name = jinrongjiaTests;
 			productName = "爱易点Tests";
-			productReference = AB05428F19EA678300D86BC7 /* mycafeTests.xctest */;
+			productReference = AB05428F19EA678300D86BC7 /* jinrongjiaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -990,7 +990,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AB05427119EA678300D86BC7 /* Build configuration list for PBXProject "mycafe" */;
+			buildConfigurationList = AB05427119EA678300D86BC7 /* Build configuration list for PBXProject "jinrongjia" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1004,8 +1004,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB05427519EA678300D86BC7 /* mycafe */,
-				AB05428E19EA678300D86BC7 /* mycafeTests */,
+				AB05427519EA678300D86BC7 /* jinrongjia */,
+				AB05428E19EA678300D86BC7 /* jinrongjiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1162,7 +1162,7 @@
 /* Begin PBXTargetDependency section */
 		AB05429119EA678300D86BC7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB05427519EA678300D86BC7 /* mycafe */;
+			target = AB05427519EA678300D86BC7 /* jinrongjia */;
 			targetProxy = AB05429019EA678300D86BC7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1223,7 +1223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -1264,7 +1264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "95c4c0d6-484b-4190-8875-159f2572e268";
@@ -1295,7 +1295,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "爱易点/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1332,7 +1332,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "爱易点/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1366,7 +1366,7 @@
 				);
 				INFOPLIST_FILE = "爱易点Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = mycafeTests;
+				PRODUCT_NAME = jinrongjiaTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/爱易点.app/爱易点";
 			};
@@ -1384,7 +1384,7 @@
 				);
 				INFOPLIST_FILE = "爱易点Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = mycafeTests;
+				PRODUCT_NAME = jinrongjiaTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/爱易点.app/爱易点";
 			};
@@ -1393,7 +1393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB05427119EA678300D86BC7 /* Build configuration list for PBXProject "mycafe" */ = {
+		AB05427119EA678300D86BC7 /* Build configuration list for PBXProject "jinrongjia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB05429719EA678300D86BC7 /* Debug */,
@@ -1402,7 +1402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB05429919EA678300D86BC7 /* Build configuration list for PBXNativeTarget "mycafe" */ = {
+		AB05429919EA678300D86BC7 /* Build configuration list for PBXNativeTarget "jinrongjia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB05429A19EA678300D86BC7 /* Debug */,
@@ -1411,7 +1411,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB05429C19EA678300D86BC7 /* Build configuration list for PBXNativeTarget "mycafeTests" */ = {
+		AB05429C19EA678300D86BC7 /* Build configuration list for PBXNativeTarget "jinrongjiaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB05429D19EA678300D86BC7 /* Debug */,
