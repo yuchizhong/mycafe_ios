@@ -32,7 +32,6 @@
 @property (strong, atomic) NSString *mall;
 
 //-(void)pickerDone;
--(void)getOutStore;
 
 +(any_store*)getDetails;
 +(UIImage*)getStarImage;

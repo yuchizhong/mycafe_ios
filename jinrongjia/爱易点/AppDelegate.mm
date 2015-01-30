@@ -66,6 +66,7 @@ static NSInteger currentPaymentID = 0;
     
     [[UITextField appearance] setTintColor:COFFEE_VERY_DARK];
     
+    /*
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:
          [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
@@ -85,7 +86,6 @@ static NSInteger currentPaymentID = 0;
         types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     }
     
-    /*
     if ([[NSUserDefaults standardUserDefaults] integerForKey:@"launched"] == 0) {
         [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"launched"];
         [[NSUserDefaults standardUserDefaults] synchronize];

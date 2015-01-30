@@ -148,11 +148,13 @@ static singleItem *itemDetailViewController = nil;
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //show instructions at first launch
+    /*
     if (launchTime == 1) {
         firstLaunch = YES;
         UIViewController *launchInstructions = [self.storyboard instantiateViewControllerWithIdentifier:@"launchInstructions"];
         [self presentViewController:launchInstructions animated:NO completion:nil];
     }
+     */
     
     SET_NAVBAR
     
@@ -184,7 +186,7 @@ static singleItem *itemDetailViewController = nil;
     [self.storeTable setBackgroundColor:COFFEE_LIGHT];
     
     [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
-    [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
+    //[[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
     
     [AppDelegate setStoreListController:self];
     [rootTabViewController setStoreListNavController:self.navigationController];
@@ -485,7 +487,7 @@ static singleItem *itemDetailViewController = nil;
     //[self.indicatorAlert dismissWithClickedButtonIndex:0 animated:YES];
     
     [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
-    [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
+    //[[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
     
     //提示发现新餐厅
     /*

@@ -80,9 +80,9 @@ static BOOL gotUserinfo = NO;
     USER_BEGIN_LOADGING
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:uid, @"username",
-                                [NSString stringWithFormat:@"%d", birthyear], @"birthyear",
-                                [NSString stringWithFormat:@"%d", birthmonth], @"birthmonth",
-                                [NSString stringWithFormat:@"%d", gender], @"gender", nil];
+                                [NSString stringWithFormat:@"%ld", (long)birthyear], @"birthyear",
+                                [NSString stringWithFormat:@"%ld", (long)birthmonth], @"birthmonth",
+                                [NSString stringWithFormat:@"%ld", (long)gender], @"gender", nil];
     
     NSData *recvData = [HTTPRequest syncGet:SERVER_SUBMIT_USERINFO withData:dic];
     if (recvData == nil) {
@@ -112,6 +112,7 @@ static BOOL gotUserinfo = NO;
 //启动时获取配置信息
 //返回nil：要求更新
 + (NSString*)getServerAddress {
+    /*
     if (server_link == nil) {
         //connect to start server address and check new version
         int retry = 0;
@@ -148,6 +149,7 @@ static BOOL gotUserinfo = NO;
             });
         }
     }
+     */
     
     if (server_link == nil || [server_link isEqualToString:@""]) {
         server_link = SERVER_ADDRESS;
@@ -1221,7 +1223,7 @@ static BOOL gotUserinfo = NO;
     if (!preorder_mode) {
         [orderInfo saveOrder];
         storeID = @"";
-        [(storeList*)[AppDelegate getStoreListController] getOutStore];
+        //[(storeList*)[AppDelegate getStoreListController] getOutStore];
     } else {
         lastMajor = 0;
         lastMinor = 0;
