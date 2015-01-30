@@ -14,7 +14,6 @@
 		AB05427C19EA678300D86BC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05427B19EA678300D86BC7 /* main.m */; };
 		AB05427F19EA678300D86BC7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB05427E19EA678300D86BC7 /* AppDelegate.mm */; };
 		AB05428A19EA678300D86BC7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB05428819EA678300D86BC7 /* LaunchScreen.xib */; };
-		AB05429619EA678300D86BC7 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05429519EA678300D86BC7 /* ___Tests.m */; };
 		AB0AAE051A591DFD009DC134 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AADFB1A591DFD009DC134 /* UIImage+KVNEmpty.m */; };
 		AB0AAE061A591DFD009DC134 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AADFD1A591DFD009DC134 /* UIImage+KVNImageEffects.m */; };
 		AB0AAE071A591DFD009DC134 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AAE001A591DFD009DC134 /* KVNProgress.m */; };
@@ -146,16 +145,6 @@
 		ABFF478619EEF4D3005F63E0 /* storeList.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFF478519EEF4D3005F63E0 /* storeList.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AB05429019EA678300D86BC7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB05426E19EA678300D86BC7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB05427519EA678300D86BC7;
-			remoteInfo = "爱易点";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		AB00CECD1A6F9DE8003E1ADB /* launchInstrcutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = launchInstrcutions.h; sourceTree = "<group>"; };
 		AB00CECE1A6F9DE8003E1ADB /* launchInstrcutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = launchInstrcutions.m; sourceTree = "<group>"; };
@@ -171,9 +160,6 @@
 		AB05428119EA678300D86BC7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; usesTabs = 0; };
 		AB05428419EA678300D86BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB05428919EA678300D86BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		AB05428F19EA678300D86BC7 /* jinrongjiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jinrongjiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB05429419EA678300D86BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB05429519EA678300D86BC7 /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
 		AB0AADFA1A591DFD009DC134 /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
 		AB0AADFB1A591DFD009DC134 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
 		AB0AADFC1A591DFD009DC134 /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
@@ -340,7 +326,7 @@
 		ABABB5821A5D598700C4E8EE /* wall@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wall@3x.png"; sourceTree = "<group>"; };
 		ABABB5861A5D5A7000C4E8EE /* cafewall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cafewall.h; sourceTree = "<group>"; };
 		ABABB5871A5D5A7000C4E8EE /* cafewall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cafewall.m; sourceTree = "<group>"; };
-		ABAF260D1A7BBAE30073C447 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = jinrongjia/Images.xcassets; sourceTree = "<group>"; };
+		ABAF260D1A7BBAE30073C447 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../jinrongjia/Images.xcassets; sourceTree = "<group>"; };
 		ABB8B19319FA221A00BCF043 /* loginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginView.h; sourceTree = "<group>"; };
 		ABB8B19419FA221A00BCF043 /* loginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginView.m; sourceTree = "<group>"; };
 		ABB8B19619FA2A6700BCF043 /* registerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerView.h; sourceTree = "<group>"; };
@@ -405,24 +391,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB05428C19EA678300D86BC7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AB05426D19EA678300D86BC7 = {
 			isa = PBXGroup;
 			children = (
-				ABAF260D1A7BBAE30073C447 /* Images.xcassets */,
 				AB05427819EA678300D86BC7 /* UniCafe */,
 				AB90763819EA69460024E70C /* Images */,
 				AB90765519EA69BA0024E70C /* Frameworks */,
-				AB05429219EA678300D86BC7 /* 爱易点Tests */,
 				AB05427719EA678300D86BC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -431,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				AB05427619EA678300D86BC7 /* 爱易点.app */,
-				AB05428F19EA678300D86BC7 /* jinrongjiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -447,6 +423,7 @@
 				ABABB5891A5D5A7500C4E8EE /* cafeWall */,
 				AB05428319EA678300D86BC7 /* Main.storyboard */,
 				AB05428819EA678300D86BC7 /* LaunchScreen.xib */,
+				ABAF260D1A7BBAE30073C447 /* Images.xcassets */,
 				AB05427919EA678300D86BC7 /* Supporting Files */,
 			);
 			name = UniCafe;
@@ -458,23 +435,6 @@
 			children = (
 				AB05427A19EA678300D86BC7 /* Info.plist */,
 				AB05427B19EA678300D86BC7 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AB05429219EA678300D86BC7 /* 爱易点Tests */ = {
-			isa = PBXGroup;
-			children = (
-				AB05429519EA678300D86BC7 /* ___Tests.m */,
-				AB05429319EA678300D86BC7 /* Supporting Files */,
-			);
-			path = "爱易点Tests";
-			sourceTree = "<group>";
-		};
-		AB05429319EA678300D86BC7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AB05429419EA678300D86BC7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -941,24 +901,6 @@
 			productReference = AB05427619EA678300D86BC7 /* 爱易点.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB05428E19EA678300D86BC7 /* jinrongjiaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB05429C19EA678300D86BC7 /* Build configuration list for PBXNativeTarget "jinrongjiaTests" */;
-			buildPhases = (
-				AB05428B19EA678300D86BC7 /* Sources */,
-				AB05428C19EA678300D86BC7 /* Frameworks */,
-				AB05428D19EA678300D86BC7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AB05429119EA678300D86BC7 /* PBXTargetDependency */,
-			);
-			name = jinrongjiaTests;
-			productName = "爱易点Tests";
-			productReference = AB05428F19EA678300D86BC7 /* jinrongjiaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -983,11 +925,6 @@
 							};
 						};
 					};
-					AB05428E19EA678300D86BC7 = {
-						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = EH5J7744G2;
-						TestTargetID = AB05427519EA678300D86BC7;
-					};
 				};
 			};
 			buildConfigurationList = AB05427119EA678300D86BC7 /* Build configuration list for PBXProject "jinrongjia" */;
@@ -1005,7 +942,6 @@
 			projectRoot = "";
 			targets = (
 				AB05427519EA678300D86BC7 /* jinrongjia */,
-				AB05428E19EA678300D86BC7 /* jinrongjiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1066,13 +1002,6 @@
 				AB8D52E41A226C4C00E24E0A /* add.png in Resources */,
 				AB8EAC4D1A4DA6B8003AE807 /* icon_session.png in Resources */,
 				AB4A285B1A5E9818009FD7D1 /* sendCoffee.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB05428D19EA678300D86BC7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1149,23 +1078,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB05428B19EA678300D86BC7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB05429619EA678300D86BC7 /* ___Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AB05429119EA678300D86BC7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB05427519EA678300D86BC7 /* jinrongjia */;
-			targetProxy = AB05429019EA678300D86BC7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB05428319EA678300D86BC7 /* Main.storyboard */ = {
@@ -1281,6 +1194,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yuchi Zhong (GU6MM64Y2V)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yuchi Zhong (GU6MM64Y2V)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1317,6 +1231,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuchi Zhong";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yuchi Zhong";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1348,46 +1263,6 @@
 			};
 			name = Release;
 		};
-		AB05429D19EA678300D86BC7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "爱易点Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = jinrongjiaTests;
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/爱易点.app/爱易点";
-			};
-			name = Debug;
-		};
-		AB05429E19EA678300D86BC7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "爱易点Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = jinrongjiaTests;
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/爱易点.app/爱易点";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1405,15 +1280,6 @@
 			buildConfigurations = (
 				AB05429A19EA678300D86BC7 /* Debug */,
 				AB05429B19EA678300D86BC7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB05429C19EA678300D86BC7 /* Build configuration list for PBXNativeTarget "jinrongjiaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB05429D19EA678300D86BC7 /* Debug */,
-				AB05429E19EA678300D86BC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -115,7 +115,7 @@ static singleItem *itemDetailViewController = nil;
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (alertView.tag == -1) {
         //jump to app store
-        NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=%@", APP_ID];
+        NSString *str = @"https://itunes.apple.com/us/app/jin-rong-jia-ka-fei/id962789847?ls=1&mt=8";
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     } else if (alertView.tag == 101 && buttonIndex == 1) {
         [store openStoreWifi];

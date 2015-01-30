@@ -56,8 +56,6 @@ self.navigationController.navigationBar.shadowImage = [UIImage new]; \
 #define BAIDU_MAP_KEY       @"没有"
 #define WEIXIN_APPID        @"jinrongjiacafewx"
 
-#define APP_ID              @"933846850" //itunes store ID
-
 //simulate iBeacon
 #define SIMULATE_BEACON     NO
 #define SIMULATE_BEACON_2   YES //use beacon 2 if SIMULATE_BEACON == YES
@@ -166,7 +164,7 @@ self.navigationController.navigationBar.shadowImage = [UIImage new]; \
 
 #define STATUS_BAR_NOTIFICATION_ALWAYS_SHOW NO
 #define STATUS_BAR_NOTIFICATION_DISMISS_AFTER 5.0
-#define STATUS_BAR_NOTIFICATION_STYLE_NAME @"unistyle"
+#define STATUS_BAR_NOTIFICATION_STYLE_NAME @"mystyle"
 
 #define UI_PROGRESS_TRACK_COLOR     [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1]
 #define UI_PROGRESS_TINT_COLOR      [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]

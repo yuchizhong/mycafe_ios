@@ -254,6 +254,10 @@ static activityDetails *acdetailInstance = nil;
     NSInteger purchase_result = [user purchaseMallItem:info];
     transactionID = purchase_result;
     if (purchase_result >= 0) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"报名成功" message:nil delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        [alertView show];
+        return;
+        
         if ([[self.activityInfo objectForKey:@"price"] floatValue] == 0.0f) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"等待报名批准" message:@"免费活动需等待报名批准\n您可在消费记录中查看状态" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
             [alertView show];

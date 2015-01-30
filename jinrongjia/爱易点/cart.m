@@ -261,12 +261,13 @@ static cart *instance = nil;
          return;
       }
       totalToPay = total;
-      
+      /*
       if ([store needNoTableNum]) {
          [self askToPay:NO andTotal:total];
       } else {
          [self askToPay:YES andTotal:total];
       }
+       */
    }
    if (alertView.tag == 10 && buttonIndex == 1) {
       NSString *tableNumStr = [alertView textFieldAtIndex:0].text;
@@ -286,7 +287,7 @@ static cart *instance = nil;
       totalToPay = total;
       
       //提交成功，提示付款
-      [self askToPay:YES andTotal:total];
+      //[self askToPay:YES andTotal:total];
    }
    if (alertView.tag == 20) {
       BOOL success = NO;
