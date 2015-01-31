@@ -439,7 +439,7 @@ static cart *instance = nil;
    
    UINavigationItem *item = self.navigationItem;
    
-   [item setTitle:@"点单"];
+   [item setTitle:@"购物框"];
    
    /*
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
