@@ -117,7 +117,7 @@ static int foodlistCellID;
     
     
     UIButton *customButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [customButton setFrame:CGRectMake(0, 0, 28, 28)];
+    [customButton setFrame:CGRectMake(0, 0, 33, 33)];
     // Add your action to your button
     [customButton addTarget:self action:@selector(goOrders) forControlEvents:UIControlEventTouchUpInside];
     // Customize your button as you want, with an image if you have a pictogram to display for example
