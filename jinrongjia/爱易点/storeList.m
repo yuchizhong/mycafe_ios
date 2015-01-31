@@ -363,14 +363,15 @@ static singleItem *itemDetailViewController = nil;
         [stores removeAllObjects];
         [self.storeTable reloadData];
     }
-    
-    //prepare mainPage
+}
+
+- (void)loadWebPage {
     UIWebView *webview = [[UIWebView alloc] initWithFrame:mainPage.frame];
     [webview.scrollView setShowsVerticalScrollIndicator:NO];
     [webview.scrollView setShowsHorizontalScrollIndicator:NO];
     [webview.scrollView setBackgroundColor:[UIColor whiteColor]];
-    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.jrjkf.com"]];
-    [webview loadRequest:request];
+    NSURLRequest *webrequest =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+    [webview loadRequest:webrequest];
     [mainPage addSubview:webview];
 }
 
@@ -380,8 +381,12 @@ static singleItem *itemDetailViewController = nil;
     //启动
     if (self.justLaunched) {
         [NSThread detachNewThreadSelector:@selector(appstart) toTarget:self withObject:nil];
+        [self loadWebPage];
         self.justLaunched = NO;
     }
+    
+    return;
+    
     //刷新
     if (doneLaunch && self.needReloadStoreList) {
         numRowsToShow = NUM_STORE_ROWS_PER_PAGE;

@@ -49,7 +49,7 @@ static float purseValue;
     [lowerAgeBox setKeyboardType:UIKeyboardTypeNumberPad];
     [upperAgeBox setKeyboardType:UIKeyboardTypeNumberPad];
     
-    foodInfo *finfo = (foodInfo*)[[store getMenu] objectAtIndex:[store getIndexForFoodID:giftFoodID]];
+    foodInfo *finfo = (foodInfo*)[[store getMenu] objectAtIndex:[store getIndexForFoodID:(int)giftFoodID]];
     [foodTitle setText:finfo.title];
     [foodDescription setText:finfo.mainDescription];
     
@@ -61,7 +61,7 @@ static float purseValue;
     [loading setTrackTintColor:UI_PROGRESS_TRACK_COLOR];
     [loading setProgressTintColor:UI_PROGRESS_TINT_COLOR];
     [foodImage addSubview:loading];
-    NSString *url = [NSString stringWithFormat:@"%@/%@/dishimage/dish%d/%@", SERVER_ADDRESS, [store getCurrentStoreFolder], giftFoodID, finfo.image];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/dishimage/dish%ld/%@", SERVER_ADDRESS, [store getCurrentStoreFolder], (long)giftFoodID, finfo.image];
     url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //[[SDImageCache sharedImageCache] clearDisk];
     [foodImage setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"noimage.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
