@@ -215,8 +215,8 @@ static activityDetails *acdetailInstance = nil;
     [timeStr appendString:@" "];
     [timeStr appendString:[self.activityInfo objectForKey:@"time"]];
 
-    NSString *text = [NSString stringWithFormat:@"咖啡厅活动推荐：%@", [self.activityInfo objectForKey:@"name"]];
-    NSString *desp = [NSString stringWithFormat:@"地点：%@，时间：%@", [self.activityInfo objectForKey:@"storeName"], timeStr];
+    NSString *text = [NSString stringWithFormat:@"活动推荐：%@", [self.activityInfo objectForKey:@"name"]];
+    NSString *desp = [NSString stringWithFormat:@"举办方：%@，时间：%@", [self.activityInfo objectForKey:@"storeName"], timeStr];
     NSString *url = [NSString stringWithFormat:@"%@/images/store%@/activities/activity%@/index.html", PRODUCTION_SERVER_ADDRESS_NOT_SECURE, [self.activityInfo objectForKey:@"storeID"], [self.activityInfo objectForKey:@"activity_id"]];
     [user shareText:text withDescription:desp andImage:nil withURL:url onViewController:self];
 }
