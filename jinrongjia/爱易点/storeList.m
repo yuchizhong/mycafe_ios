@@ -299,6 +299,7 @@ static singleItem *itemDetailViewController = nil;
     self.storeListLastUpdate = [NSDate distantPast];
     self.lastPromoteWifi = [NSDate distantPast];
     
+    /*
     [self.storeTable addHeaderWithTarget:self action:@selector(loadStoresAsyncBridge) dateKey:@"tableStore"];
     [self.storeTable addFooterWithTarget:self action:@selector(loadMoreStoresAsyncBridge)];
     self.locationManager = [[CLLocationManager alloc]init];
@@ -315,7 +316,8 @@ static singleItem *itemDetailViewController = nil;
     
     notificationText = @"加载中...";
     [self.storeTable reloadData];
-    
+     */
+     
     doneLaunch = YES;
     
     //load store menu
@@ -390,7 +392,7 @@ static singleItem *itemDetailViewController = nil;
         alert.tag = -1;
         [alert show];
     }
-    [user handleNotification];
+    //[user handleNotification];
     //[NSThread detachNewThreadSelector:@selector(endLoadingFull) toTarget:self withObject:nil];
     if (!firstLaunch)
         USER_END_LOADGING_FULL

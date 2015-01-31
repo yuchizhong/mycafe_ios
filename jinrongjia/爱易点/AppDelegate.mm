@@ -66,6 +66,7 @@ static NSInteger currentPaymentID = 0;
     
     [[UITextField appearance] setTintColor:COFFEE_VERY_DARK];
     
+    //remote notifications
     /*
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:
@@ -140,6 +141,7 @@ static NSInteger currentPaymentID = 0;
 }
 
 //app开启式提示
+/*
 - (void)checkLocationAndBT {
     BOOL shown = NO;
     while (STATUS_BAR_NOTIFICATION_ALWAYS_SHOW || !shown) {
@@ -186,6 +188,7 @@ static NSInteger currentPaymentID = 0;
         }
     }
 }
+ */
 
 //支付回调，忽略
 - (void)paymentResult:(NSString *)result {
