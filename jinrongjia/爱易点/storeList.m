@@ -370,7 +370,7 @@ static singleItem *itemDetailViewController = nil;
     [webview.scrollView setShowsVerticalScrollIndicator:NO];
     [webview.scrollView setShowsHorizontalScrollIndicator:NO];
     [webview.scrollView setBackgroundColor:[UIColor whiteColor]];
-    NSURLRequest *webrequest =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+    NSURLRequest *webrequest =[NSURLRequest requestWithURL:[NSURL URLWithString:app_web_url]];
     [webview loadRequest:webrequest];
     [mainPage addSubview:webview];
 }
@@ -388,6 +388,7 @@ static singleItem *itemDetailViewController = nil;
     return;
     
     //刷新
+    /*
     if (doneLaunch && self.needReloadStoreList) {
         numRowsToShow = NUM_STORE_ROWS_PER_PAGE;
         [self.view layoutSubviews];
@@ -397,6 +398,7 @@ static singleItem *itemDetailViewController = nil;
         [self.storeTable headerBeginRefreshing];
     }
     self.needReloadStoreList = NO;
+     */
 }
 
 - (void)appstart {

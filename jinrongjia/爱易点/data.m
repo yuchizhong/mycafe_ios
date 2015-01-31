@@ -194,11 +194,13 @@ static BOOL gotUserinfo = NO;
     }
     NSLog(@"using device ID: %@", deviceID);
     
+    /*
     if ([self getServerAddress] == nil) {
         return NO;
     }
+     */
+    
     return YES;
-    //[self startTencentAuth];
 }
 
 //定时获取服务器通知消息

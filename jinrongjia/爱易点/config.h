@@ -11,7 +11,7 @@
 
 #define app_version     1.0 //用于检测app是否为最新版
 #define app_store_id    @"26"
-#define web_url         @"http://www.jrjkf.com"
+#define app_web_url     @"http://www.jrjkf.com"
 
 #ifdef __OPTIMIZE__     //release
 #   define NSLog(...) {}
