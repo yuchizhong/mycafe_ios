@@ -446,14 +446,19 @@ static cart *instance = nil;
     style:UIBarButtonItemStyleBordered
     target:self
     action:@selector(backToMenu)];
-    
-   
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"清空"
+    */
+   /*
+    UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithTitle:@"清空"
     style:UIBarButtonItemStylePlain
     target:self
     action:@selector(clearAll)];
-    [item setLeftBarButtonItems:@[backButton, leftButton]];
     */
+   
+   UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
+                                                 target:self
+                                                 action:@selector(clearAll)];
+   [item setRightBarButtonItem:clearButton];
+   
    //[item setLeftBarButtonItem:backButton];
    
    //[self.navigationController.navigationBar setTranslucent:YES];
@@ -606,7 +611,7 @@ static cart *instance = nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   int rightRow = [indexPath row];
+   NSInteger rightRow = [indexPath row];
    
    if (rightRow == [orderInfo getOrder].count) {
       [self clearAll];
