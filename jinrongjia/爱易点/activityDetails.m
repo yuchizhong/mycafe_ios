@@ -113,6 +113,12 @@ static activityDetails *acdetailInstance = nil;
     [self.webView.scrollView setShowsHorizontalScrollIndicator:NO];
     [self.webView.scrollView setBackgroundColor:[UIColor whiteColor]];
     
+    [NSThread detachNewThreadSelector:@selector(loadWebPage) toTarget:self withObject:nil];
+    
+    storeIDforCollect = [[self.activityInfo objectForKey:@"storeID"] integerValue];
+}
+
+- (void)loadWebPage {
     [self.loadingLabel setHidden:NO];
     
     NSString *url = [NSString stringWithFormat:@"%@/images/store%@/activities/activity%@/index.html", SERVER_ADDRESS, [self.activityInfo objectForKey:@"storeID"], [self.activityInfo objectForKey:@"activity_id"]];
@@ -141,7 +147,7 @@ static activityDetails *acdetailInstance = nil;
                     skip = YES;
                 value = [self.activityInfo objectForKey:@"end_time"];
                 break;
-
+                
             case 3:
                 title = @"报名截止日期";
                 value = [self.activityInfo objectForKey:@"deadline_date"];
@@ -198,8 +204,6 @@ static activityDetails *acdetailInstance = nil;
     [headerData appendData:data];
     [headerData appendData:[HTTPRequest dataFromString:header]];
     [self.webView loadData:headerData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:url]];
-    
-    storeIDforCollect = [[self.activityInfo objectForKey:@"storeID"] integerValue];
 }
 
 - (void)shareActivity {
