@@ -16,7 +16,7 @@
 static NSDate *lastRefreshTime = nil;
 static storeList *sl = nil;
 static JDStatusBarView *topStatusBar = nil;
-static BOOL locationOn = NO, BTON = NO;
+//static BOOL locationOn = NO, BTON = NO;
 static int payingModule = 0;
 static NSInteger currentPaymentID = 0;
 
@@ -67,7 +67,6 @@ static NSInteger currentPaymentID = 0;
     [[UITextField appearance] setTintColor:COFFEE_VERY_DARK];
     
     //remote notifications
-    /*
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:
          [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
@@ -92,10 +91,9 @@ static NSInteger currentPaymentID = 0;
         [[NSUserDefaults standardUserDefaults] synchronize];
     } else {
         if ((types & UIRemoteNotificationTypeAlert) != UIRemoteNotificationTypeAlert) {
-            [HTTPRequest alert:@"请打开推送服务。\n有你咖啡需要推送服务通知您必要的信息，如取餐等。"];
+            //[HTTPRequest alert:@"请打开推送服务。\n金融家咖啡需要推送服务通知您必要的信息，如取餐等。"];
         }
     }
-     */
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
