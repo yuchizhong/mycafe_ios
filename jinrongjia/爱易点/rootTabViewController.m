@@ -69,6 +69,7 @@ static UINavigationController *storeListNavController = nil;
         [cv popToRootViewControllerAnimated:NO];
     }
     
+    /*
     //判断是否需要刷新店家列表
     if (viewController.tabBarItem.tag == 0 && (((storeList*)[AppDelegate getStoreListController]).mall != nil || ((storeList*)[AppDelegate getStoreListController]).showOnlyCollected)) {
         [(storeList*)[AppDelegate getStoreListController] setMall:nil];
@@ -76,6 +77,7 @@ static UINavigationController *storeListNavController = nil;
         [(storeList*)[AppDelegate getStoreListController] setNeedReloadStoreList:YES];
         storeListNavController = [storeListNavController initWithRootViewController:[AppDelegate getStoreListController]];
     }
+     */
 }
 
 /*

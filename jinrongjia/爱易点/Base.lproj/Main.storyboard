@@ -11,7 +11,7 @@
         <scene sceneID="cvU-Eh-IUM">
             <objects>
                 <navigationController definesPresentationContext="YES" id="7uq-Tl-SEQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="3" title="活动" image="ac.png" id="jz3-XW-vKJ"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="活动" image="ac.png" id="jz3-XW-vKJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FM1-dK-9Wb">
@@ -353,7 +353,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="-763"/>
         </scene>
-        <!--咖啡吧-->
+        <!--首页-->
         <scene sceneID="sTx-yc-7yu">
             <objects>
                 <viewController storyboardIdentifier="mainStoreList" id="Oai-sZ-hIR" customClass="storeList" sceneMemberID="viewController">
@@ -426,7 +426,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="咖啡吧" id="Laj-aV-1Md">
+                    <navigationItem key="navigationItem" title="首页" id="Laj-aV-1Md">
                         <barButtonItem key="backBarButtonItem" title="返回" id="SgU-HG-tRc"/>
                     </navigationItem>
                     <connections>
@@ -871,7 +871,6 @@
                     <connections>
                         <segue destination="PhK-Ck-39x" kind="relationship" relationship="viewControllers" id="b7N-kH-GbV"/>
                         <segue destination="Nyl-dH-q7L" kind="relationship" relationship="viewControllers" id="BGF-Ql-IRp"/>
-                        <segue destination="f3m-Wm-bXd" kind="relationship" relationship="viewControllers" id="PAm-iF-c9i"/>
                         <segue destination="7uq-Tl-SEQ" kind="relationship" relationship="viewControllers" id="M3b-GG-xcN"/>
                         <segue destination="a5x-R3-Ehy" kind="relationship" relationship="viewControllers" id="UaQ-oi-elR"/>
                     </connections>
@@ -884,7 +883,7 @@
         <scene sceneID="9DZ-bU-t48">
             <objects>
                 <navigationController id="a5x-R3-Ehy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="4" title="我" image="user.png" id="yT6-xs-dio"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="我" image="user.png" id="yT6-xs-dio"/>
                     <navigationItem key="navigationItem" id="8Fe-5F-ZJO"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="Fqx-yT-F0g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1031,11 +1030,11 @@
             </objects>
             <point key="canvasLocation" x="4036" y="1078"/>
         </scene>
-        <!--点餐-->
+        <!--菜单-->
         <scene sceneID="q8O-Ym-lae">
             <objects>
                 <navigationController storyboardIdentifier="foodList" id="Nyl-dH-q7L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="点餐" image="order.png" id="iGl-xk-lHP"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="菜单" image="order.png" id="iGl-xk-lHP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l5E-vq-M6G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2090,7 +2089,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="咖啡厅的活动" id="wTr-ah-R9q">
+                    <navigationItem key="navigationItem" title="活动" id="wTr-ah-R9q">
                         <barButtonItem key="backBarButtonItem" title="返回" id="uU8-iZ-9Od"/>
                     </navigationItem>
                     <connections>

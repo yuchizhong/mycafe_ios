@@ -463,6 +463,7 @@ static cart *instance = nil;
 }
 
 - (void)refresh {
+   /*
    UINavigationItem *item = self.navigationItem;
    
    if ([store supportAiyidian] || [store preorder_mode]) {
@@ -508,6 +509,7 @@ static cart *instance = nil;
       [rightButton setEnabled:NO];
       [item setRightBarButtonItem:rightButton];
    }
+    */
    
    /*
     if (self.tabBarController.selectedIndex == 2) {

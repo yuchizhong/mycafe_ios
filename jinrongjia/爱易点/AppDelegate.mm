@@ -372,6 +372,7 @@ static NSInteger currentPaymentID = 0;
      */
     
     //在后台时间过长需重新刷新菜单
+    /*
     if (lastRefreshTime == nil)
         lastRefreshTime = [NSDate distantPast];
     
@@ -379,10 +380,11 @@ static NSInteger currentPaymentID = 0;
     
     if (ABS(timeGap) > 60 * 60) { //1 hour
         [store forceReloadStore];
-        [store setCurrentStore:app_store_id/*[store getCurrentStoreID]*/];
+        [store setCurrentStore:app_store_id];
         [storeList refreshMenuAndOrder];
         lastRefreshTime = [NSDate date];
     }
+     */
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

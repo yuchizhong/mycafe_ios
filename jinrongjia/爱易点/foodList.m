@@ -121,7 +121,7 @@ static int foodlistCellID;
     // Add your action to your button
     [customButton addTarget:self action:@selector(goOrders) forControlEvents:UIControlEventTouchUpInside];
     // Customize your button as you want, with an image if you have a pictogram to display for example
-    [customButton setImage:[UIImage imageNamed:@"cart.png"] forState:UIControlStateNormal];
+    [customButton setImage:[UIImage imageNamed:@"order_cart.png"] forState:UIControlStateNormal];
     
     BBBadgeBarButtonItem *rightButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:customButton];
     rightButton.badgeOriginX = 3;
@@ -212,7 +212,7 @@ static int foodlistCellID;
         return;
     }
     
-    [self.navigationItem setTitle:[store getCurrentStoreName]];
+    [self.navigationItem setTitle:@"菜单"/*[store getCurrentStoreName]*/];
     
     /*
     if ([store whiteLabel] && self.tabBarController.selectedIndex == 1) {
@@ -264,7 +264,7 @@ static int foodlistCellID;
     [super viewWillAppear:animated];
     [self refresh];
     
-    [self.navigationItem setTitle:[store getCurrentStoreName]];
+    [self.navigationItem setTitle:@"菜单"/*[store getCurrentStoreName]*/];
     /*
     if ([store whiteLabel]) {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:animated];

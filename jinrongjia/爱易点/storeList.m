@@ -346,7 +346,7 @@ static singleItem *itemDetailViewController = nil;
     if (self.showOnlyCollected) {
         [self.navigationItem setTitle:@"收藏的咖啡馆"];
     } else if (self.mall == nil || [self.mall isEqualToString:@""]) {
-        [self.navigationItem setTitle:@"附近的咖啡馆"];
+        [self.navigationItem setTitle:@"首页"];
     } else {
         if ([self.mall isEqualToString:@"cash"]) {
             [self.navigationItem setTitle:@"商城"];
@@ -469,11 +469,11 @@ static singleItem *itemDetailViewController = nil;
     
     self.doneLoading = 0;
     int retry = 0;
-    while (self.doneLoading == 0 && retry < 1) {
+    while (self.doneLoading == 0/* && retry < 1*/) {
         //加载信息
         if (![store setCurrentStore:app_store_id]) {
             retry++;
-            //[NSThread sleepForTimeInterval:NETWORK_RETRY_WAIT];
+            [NSThread sleepForTimeInterval:NETWORK_RETRY_WAIT];
             continue;
         }
         
@@ -484,6 +484,10 @@ static singleItem *itemDetailViewController = nil;
         //done
         [self reloadCartBadge];
     }
+    if (retry > 0) {
+        NSLog(@"load retry: %d", retry);
+    }
+    
     //[self.indicatorAlert dismissWithClickedButtonIndex:0 animated:YES];
     
     [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];

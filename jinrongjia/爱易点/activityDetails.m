@@ -106,7 +106,7 @@ static activityDetails *acdetailInstance = nil;
             [rightButton setEnabled:NO];
         }
         
-        [self.navigationItem setRightBarButtonItems:@[rightButton, shareButton]];
+        [self.navigationItem setRightBarButtonItems:@[shareButton]];
     }
     
     [self.webView.scrollView setShowsVerticalScrollIndicator:NO];
