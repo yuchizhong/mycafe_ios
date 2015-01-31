@@ -183,6 +183,7 @@ static activityDetails *acdetailInstance = nil;
                 break;
                 
             default:
+                skip = YES;
                 break;
         }
         
