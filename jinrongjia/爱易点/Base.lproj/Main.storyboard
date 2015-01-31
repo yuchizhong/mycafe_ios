@@ -408,7 +408,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="mainView" translatesAutoresizingMaskIntoConstraints="NO" id="nee-Cz-7Tc">
+                            <view contentMode="scaleToFill" restorationIdentifier="mainView" translatesAutoresizingMaskIntoConstraints="NO" id="nee-Cz-7Tc" userLabel="首页">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -431,7 +431,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ThU-vG-rod"/>
-                                <exclude reference="nee-Cz-7Tc"/>
                             </mask>
                         </variation>
                     </view>
@@ -440,6 +439,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="areaPickerRoll" destination="rBJ-Yj-0FU" id="OOt-lz-chz"/>
+                        <outlet property="mainPage" destination="nee-Cz-7Tc" id="3RW-yd-9NM"/>
                         <outlet property="pickerView" destination="ThU-vG-rod" id="IY1-Kf-i4R"/>
                         <outlet property="storeTable" destination="Pgf-et-z5o" id="Cx8-Lf-trr"/>
                         <segue destination="ul6-kn-Kcs" kind="push" id="iah-to-J1G"/>

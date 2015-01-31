@@ -18,6 +18,8 @@
 
 @interface storeList : UIViewController<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UIAlertViewDelegate, DOPDropDownMenuDataSource, DOPDropDownMenuDelegate>
 
+@property (strong, nonatomic) IBOutlet UIView *mainPage;
+
 @property (strong, atomic) IBOutlet UITableView *storeTable;
 @property (strong, nonatomic) IBOutlet areaPicker *pickerView;
 @property (strong, atomic) IBOutlet UIPickerView *areaPickerRoll;

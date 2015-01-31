@@ -72,6 +72,8 @@ static singleItem *itemDetailViewController = nil;
 
 @implementation storeList
 
+@synthesize mainPage;
+
 + (double)getCurrentLongitude {
     return longitude;
 }
@@ -361,6 +363,15 @@ static singleItem *itemDetailViewController = nil;
         [stores removeAllObjects];
         [self.storeTable reloadData];
     }
+    
+    //prepare mainPage
+    UIWebView *webview = [[UIWebView alloc] initWithFrame:mainPage.frame];
+    [webview.scrollView setShowsVerticalScrollIndicator:NO];
+    [webview.scrollView setShowsHorizontalScrollIndicator:NO];
+    [webview.scrollView setBackgroundColor:[UIColor whiteColor]];
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.jrjkf.com"]];
+    [webview loadRequest:request];
+    [mainPage addSubview:webview];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -111,7 +111,7 @@ static activityDetails *acdetailInstance = nil;
     
     [self.webView.scrollView setShowsVerticalScrollIndicator:NO];
     [self.webView.scrollView setShowsHorizontalScrollIndicator:NO];
-    [self.webView.scrollView setBackgroundColor:[UIColor clearColor]];
+    [self.webView.scrollView setBackgroundColor:[UIColor whiteColor]];
     
     [self.loadingLabel setHidden:NO];
     
