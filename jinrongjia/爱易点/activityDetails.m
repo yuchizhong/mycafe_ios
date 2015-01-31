@@ -119,7 +119,7 @@ static activityDetails *acdetailInstance = nil;
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     
     NSMutableString *header = [NSMutableString stringWithFormat:@"<hr noshade color=\"#000000\" />"];
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 9; i++) {
         NSString *title, *value;
         BOOL skip = NO;
         switch (i) {
@@ -176,13 +176,6 @@ static activityDetails *acdetailInstance = nil;
                 break;
                 
             case 8:
-                title = @"其他介绍信息";
-                if ([self.activityInfo objectForKey:@"description"] == [NSNull null] || [[self.activityInfo objectForKey:@"description"] isEqualToString:@""])
-                    skip = YES;
-                value = [self.activityInfo objectForKey:@"description"];
-                break;
-                
-            case 9:
                 title = @"备注";
                 if ([self.activityInfo objectForKey:@"note"] == [NSNull null] || [[self.activityInfo objectForKey:@"note"] isEqualToString:@""])
                     skip = YES;
