@@ -249,7 +249,7 @@ static int infoCellID;
         UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.infoTable.frame.size.width, CELL_HEIGHT)];
         [l setTextAlignment:NSTextAlignmentCenter];
         [l setTextColor:COFFEE_VERY_DARK];
-        [l setFont:UI_TEXT_FONT];
+        [l setFont:UI_TEXT_FONT_BOLD];
         if (indexPath.section == 2 && indexPath.row == 0) {
             [l setText:@"登录"];
         } else if (indexPath.section == 2 && indexPath.row == 1) {
@@ -262,7 +262,7 @@ static int infoCellID;
         UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.infoTable.frame.size.width, CELL_HEIGHT)];
         [l setTextAlignment:NSTextAlignmentCenter];
         [l setTextColor:COFFEE_VERY_DARK];
-        [l setFont:UI_TEXT_FONT];
+        [l setFont:UI_TEXT_FONT_BOLD];
         if (indexPath.section == 1 && indexPath.row == 0) {
             [l setText:@"消费记录"];
         } else if (indexPath.section == 2 && indexPath.row == 0) {

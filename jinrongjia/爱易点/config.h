@@ -188,11 +188,13 @@ self.navigationController.navigationBar.shadowImage = [UIImage new]; \
 #define UI_TITLE_HEIGHT     25
 #define UI_TEXT_HEIGHT      20
 
-#define UI_TITLE_FONT   [UIFont systemFontOfSize:18]
-#define UI_TEXT_FONT    [UIFont systemFontOfSize:14]
-#define FONT15          [UIFont systemFontOfSize:15]
-#define FONT16          [UIFont systemFontOfSize:16]
-#define FONT17          [UIFont systemFontOfSize:17]
+#define UI_TITLE_FONT       [UIFont systemFontOfSize:18]
+#define UI_TEXT_FONT        [UIFont systemFontOfSize:14]
+#define UI_TEXT_FONT_BOLD   [UIFont boldSystemFontOfSize:15]
+#define UI_TITLE_FONT_BOLD  [UIFont boldSystemFontOfSize:18]
+#define FONT15              [UIFont systemFontOfSize:15]
+#define FONT16              [UIFont systemFontOfSize:16]
+#define FONT17              [UIFont systemFontOfSize:17]
 
 //控件
 #define UI_PAGECONTROL_HEIGHT 37
