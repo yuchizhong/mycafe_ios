@@ -408,13 +408,21 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="mainView" translatesAutoresizingMaskIntoConstraints="NO" id="nee-Cz-7Tc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ThU-vG-rod" secondAttribute="width" id="Mif-py-OcF"/>
+                            <constraint firstItem="nee-Cz-7Tc" firstAttribute="top" secondItem="Pgf-et-z5o" secondAttribute="top" id="Xvu-sP-c2d"/>
                             <constraint firstItem="aJL-zg-9y4" firstAttribute="top" secondItem="ThU-vG-rod" secondAttribute="bottom" id="Y0C-c7-1oU"/>
                             <constraint firstItem="Pgf-et-z5o" firstAttribute="leading" secondItem="XFM-MG-IdP" secondAttribute="leading" id="YmM-L9-wHV"/>
+                            <constraint firstItem="nee-Cz-7Tc" firstAttribute="height" secondItem="Pgf-et-z5o" secondAttribute="height" id="Zqz-Cg-Wze"/>
                             <constraint firstItem="Pgf-et-z5o" firstAttribute="top" secondItem="XBD-C7-9LJ" secondAttribute="top" id="b6j-0u-nRa"/>
+                            <constraint firstItem="nee-Cz-7Tc" firstAttribute="width" secondItem="Pgf-et-z5o" secondAttribute="width" id="eRa-HK-rpQ"/>
+                            <constraint firstItem="nee-Cz-7Tc" firstAttribute="leading" secondItem="Pgf-et-z5o" secondAttribute="leading" id="eoM-DG-etE"/>
                             <constraint firstItem="Pgf-et-z5o" firstAttribute="width" secondItem="XBD-C7-9LJ" secondAttribute="width" id="h9E-6s-6oS"/>
                             <constraint firstItem="Pgf-et-z5o" firstAttribute="height" secondItem="XBD-C7-9LJ" secondAttribute="height" id="pO1-b9-YcC"/>
                             <constraint firstAttribute="centerX" secondItem="ThU-vG-rod" secondAttribute="centerX" id="pW9-XF-h6N"/>
@@ -423,6 +431,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ThU-vG-rod"/>
+                                <exclude reference="nee-Cz-7Tc"/>
                             </mask>
                         </variation>
                     </view>
@@ -856,7 +865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Tg-zv-61c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1653" y="-2236"/>
+            <point key="canvasLocation" x="-2471" y="-2236"/>
         </scene>
         <!--咖啡墙-->
         <scene sceneID="OXR-Fa-nv8">

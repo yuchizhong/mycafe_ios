@@ -19,7 +19,6 @@
 //store//////////////////////////////////////////////////////////
 static NSMutableArray *menu = nil;
 static NSMutableArray *order = nil;
-static NSMutableArray *beacons = nil;
 
 static NSString *storeID = @"";
 static NSString *storeName = @"";
@@ -1168,6 +1167,7 @@ static BOOL gotUserinfo = NO;
 }
 
 + (BOOL)storeChanged:(int)major andMinor:(int)minor {
+    /*
     if (major == lastMajor && minor == lastMinor) {
         if (lastMajorLoaded == lastMajor && lastMinorLoaded == lastMinor)
             lastIDUpdate = [NSDate date];
@@ -1194,6 +1194,7 @@ static BOOL gotUserinfo = NO;
         lastMinor = minor;
         return YES;
     }
+     */
     return NO;
 }
 
@@ -1229,7 +1230,7 @@ static BOOL gotUserinfo = NO;
         lastMinor = 0;
         lastMajorLoaded = 0;
         lastMinorLoaded = 0;
-        [beacons removeAllObjects];
+        //[beacons removeAllObjects];
     }
 }
 
@@ -1366,6 +1367,7 @@ static BOOL gotUserinfo = NO;
     
     //load beacons
     //缓存beacon列表，用于同一家店内用户走动
+    /*
     if (beacons == nil) {
         beacons = [[NSMutableArray alloc] init];
     } else {
@@ -1377,6 +1379,8 @@ static BOOL gotUserinfo = NO;
         beacon *b = [[beacon alloc] initWithMajor:[[item objectForKey:@"major"] integerValue] andMinor:[[item objectForKey:@"minor"] integerValue]];
         [beacons addObject:b];
     }
+     */
+    
     //菜单
     NSArray *foodListInJSON = [jsonRoot objectForKey:@"menu"];
     for (NSDictionary *item in foodListInJSON) {
