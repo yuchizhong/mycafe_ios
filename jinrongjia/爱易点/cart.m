@@ -51,9 +51,9 @@ static cart *instance = nil;
       REFRESH_VALUE_BADGE(s);
    }
    if (_totalvalue == 0.0) {
-      [self.navigationItem setTitle:[NSString stringWithFormat:@"点单"/*, [store getCurrentStoreName]*/]];
+      [self.navigationItem setTitle:[NSString stringWithFormat:@"购物车"/*, [store getCurrentStoreName]*/]];
    } else {
-      [self.navigationItem setTitle:[NSString stringWithFormat:@"点单 ￥%.2f", _totalvalue/*, [store getCurrentStoreName]*/]];
+      [self.navigationItem setTitle:[NSString stringWithFormat:@"购物车 ￥%.2f", _totalvalue/*, [store getCurrentStoreName]*/]];
    }
 }
 
@@ -439,7 +439,7 @@ static cart *instance = nil;
    
    UINavigationItem *item = self.navigationItem;
    
-   [item setTitle:@"购物框"];
+   [item setTitle:@"购物车"];
    
    /*
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
