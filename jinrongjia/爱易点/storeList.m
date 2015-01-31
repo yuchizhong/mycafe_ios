@@ -370,6 +370,7 @@ static singleItem *itemDetailViewController = nil;
     [webview.scrollView setShowsVerticalScrollIndicator:NO];
     [webview.scrollView setShowsHorizontalScrollIndicator:NO];
     [webview.scrollView setBackgroundColor:[UIColor whiteColor]];
+    [webview setScalesPageToFit:YES];
     NSURLRequest *webrequest =[NSURLRequest requestWithURL:[NSURL URLWithString:app_web_url]];
     [webview loadRequest:webrequest];
     [mainPage addSubview:webview];

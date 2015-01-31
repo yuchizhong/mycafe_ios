@@ -58,7 +58,6 @@
 		AB64682419EEEEB90094BC33 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = AB64682319EEEEB90094BC33 /* back.png */; };
 		AB66285219F2D1FD008A28CB /* historyOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = AB66285119F2D1FD008A28CB /* historyOrder.m */; };
 		AB66285519F2D496008A28CB /* historyOrderSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = AB66285419F2D496008A28CB /* historyOrderSingle.m */; };
-		AB67B6D51A7A7B8700594D29 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB67B6D41A7A7B8700594D29 /* MapKit.framework */; };
 		AB6C5DB31A51128A001D0349 /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6C5DAE1A51128A001D0349 /* JDStatusBarNotification.m */; };
 		AB6C5DB41A51128A001D0349 /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6C5DB01A51128A001D0349 /* JDStatusBarStyle.m */; };
 		AB6C5DB51A51128A001D0349 /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6C5DB21A51128A001D0349 /* JDStatusBarView.m */; };
@@ -231,7 +230,6 @@
 		AB66285119F2D1FD008A28CB /* historyOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = historyOrder.m; sourceTree = "<group>"; };
 		AB66285319F2D496008A28CB /* historyOrderSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = historyOrderSingle.h; sourceTree = "<group>"; };
 		AB66285419F2D496008A28CB /* historyOrderSingle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = historyOrderSingle.m; sourceTree = "<group>"; };
-		AB67B6D41A7A7B8700594D29 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB69F70519EA71890004EF54 /* catagoryJumpingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = catagoryJumpingView.h; sourceTree = "<group>"; };
 		AB69F70619EA71890004EF54 /* catagoryJumpingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = catagoryJumpingView.m; sourceTree = "<group>"; };
 		AB69F70819EA721B0004EF54 /* extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extra.h; sourceTree = "<group>"; };
@@ -377,7 +375,6 @@
 				AB1E8B6819F20E5E006EDFEB /* libstdc++.dylib in Frameworks */,
 				AB1E8B6619F20E55006EDFEB /* CoreTelephony.framework in Frameworks */,
 				AB7BD2381A7A88F200F597D3 /* SDWebImage.framework in Frameworks */,
-				AB67B6D51A7A7B8700594D29 /* MapKit.framework in Frameworks */,
 				AB1E8B6419F20E4C006EDFEB /* libsqlite3.dylib in Frameworks */,
 				AB1E8B6219F20E37006EDFEB /* libiconv.dylib in Frameworks */,
 				AB6F61AD19F14B6100F1A498 /* Security.framework in Frameworks */,
@@ -675,7 +672,6 @@
 			isa = PBXGroup;
 			children = (
 				AB7BD2371A7A88F200F597D3 /* SDWebImage.framework */,
-				AB67B6D41A7A7B8700594D29 /* MapKit.framework */,
 				ABA00FBA1A5BA5A600414E70 /* CoreBluetooth.framework */,
 				ABE311CC1A4D807C00B52132 /* Social.framework */,
 				ABFF242D1A1F2B5600031711 /* CoreFoundation.framework */,
@@ -921,7 +917,7 @@
 								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.WAC = {
 								enabled = 0;
