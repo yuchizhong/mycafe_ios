@@ -88,7 +88,7 @@ static cart *myOrder = nil;
     [super viewDidLoad];
     
     SET_NAVBAR
-    [self.navigationItem setTitle:@"咖啡馆的活动"];
+    [self.navigationItem setTitle:@"活动"];
     
     [self.pickerView setHidden:YES];
     shadowOffset = CGSizeMake(0, 0);
@@ -184,7 +184,7 @@ static cart *myOrder = nil;
 
 - (void)loadActivities {
     GLOBAL_LOCK
-    if (self.usingThreads > 0 || [[NSDate date] timeIntervalSinceDate:self.storeListLastUpdate] < 0.5) {
+    if (self.usingThreads > 0 || [[NSDate date] timeIntervalSinceDate:self.storeListLastUpdate] < 2.0) {
         if (self.usingThreads == 0) {
             [self.storeTable headerEndRefreshing];
             [self.storeTable footerEndRefreshing];
@@ -193,7 +193,7 @@ static cart *myOrder = nil;
         return;
     }
     //not this view, skip
-    if (self.tabBarController.selectedIndex != 3) {
+    if (self.tabBarController.selectedIndex != 2) {
         [self.storeTable headerEndRefreshing];
         [self.storeTable footerEndRefreshing];
         GLOBAL_UNLOCK
@@ -407,6 +407,7 @@ static cart *myOrder = nil;
     //[dateLabel setShadowOffset:shadowOffset];
     [outLabel addSubview:deadlineDateLabel];
     
+    /*
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, outLabel.frame.size.height - 34, outLabel.frame.size.width - 120, 14)];
     [titleLabel setText:[NSString stringWithFormat:@"@ %@", [activity objectForKey:@"storeName"]]];
     [titleLabel setTextAlignment:NSTextAlignmentLeft];
@@ -421,22 +422,28 @@ static cart *myOrder = nil;
     }
     [titleLabel setFrame:CGRectMake(margin, outLabel.frame.size.height - 38, width, 14)];
     [outLabel addSubview:titleLabel];
+     */
     
-    UILabel *addrLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, outLabel.frame.size.height - 18, outLabel.frame.size.width - 100 - 45, 10)];
-    [addrLabel setText:[NSString stringWithFormat:@"%@", [activity objectForKey:@"addr"]]];
-    [addrLabel setTextAlignment:NSTextAlignmentLeft];
-    [addrLabel setTextColor:T_COLOR_SUB];
-    [addrLabel setFont:[UIFont systemFontOfSize:12]];
-    //[addrLabel setShadowColor:[UIColor blackColor]];
-    //[addrLabel setShadowOffset:shadowOffset];
-    [addrLabel sizeToFit];
-    width = addrLabel.frame.size.width;
-    if (width > tableView.frame.size.width - 100 - 45) {
-        width = tableView.frame.size.width - 100 - 45;
+    if ([activity objectForKey:@"activity_addr"] != [NSNull null]) {
+        UILabel *addrLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, outLabel.frame.size.height - 22 /*18*/, outLabel.frame.size.width - 100 - 45, 14 /*10*/)];
+        [addrLabel setText:[NSString stringWithFormat:@"地点：%@", [activity objectForKey:@"activity_addr"]]];
+        [addrLabel setTextAlignment:NSTextAlignmentLeft];
+        [addrLabel setTextColor:T_COLOR_SUB];
+        [addrLabel setFont:[UIFont systemFontOfSize:14]];
+        //[addrLabel setShadowColor:[UIColor blackColor]];
+        //[addrLabel setShadowOffset:shadowOffset];
+        /*
+        [addrLabel sizeToFit];
+        width = addrLabel.frame.size.width;
+        if (width > tableView.frame.size.width - 100 - 45) {
+            width = tableView.frame.size.width - 100 - 45;
+        }
+        [addrLabel setFrame:CGRectMake(margin, outLabel.frame.size.height - 18, width, 10)];
+         */
+        [outLabel addSubview:addrLabel];
     }
-    [addrLabel setFrame:CGRectMake(margin, outLabel.frame.size.height - 18, width, 10)];
-    [outLabel addSubview:addrLabel];
     
+    /*
     if ([storeList getCurrentLongitude] != 0.0 || [storeList getCurrentLatitude] != 0.0) {
         UILabel *disLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin + width, outLabel.frame.size.height - 18, 80, 10)];
         CLLocation *from = [[CLLocation alloc] initWithLatitude:[storeList getCurrentLatitude] longitude:[storeList getCurrentLongitude]];
@@ -463,7 +470,8 @@ static cart *myOrder = nil;
         //[disLabel setShadowOffset:shadowOffset];
         [outLabel addSubview:disLabel];
     }
-    
+     */
+    /*
     UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - margin - 100, outLabel.frame.size.height - 19, 100, 12)];
     [countLabel setText:[NSString stringWithFormat:@"%d/%d人", [[activity objectForKey:@"enrolled"] intValue], [[activity objectForKey:@"max"] intValue]]];
     if ([[activity objectForKey:@"max"] intValue] == 0) {
@@ -473,9 +481,11 @@ static cart *myOrder = nil;
     [countLabel setTextColor:T_COLOR_SUB];
     [countLabel setFont:[UIFont systemFontOfSize:13]];
     [outLabel addSubview:countLabel];
+     */
     
     /******************** status ********************/
     //need bottom left and right corner to be rounded
+    /*
     float statusLabelWidth = 38, statusLabelHeight = 50;
     UILabel *statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - margin - 48, 0, statusLabelWidth, statusLabelHeight * 0.9)];
     //[[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - margin - 100, outLabel.frame.size.height - 38, 100, 14)];
@@ -503,7 +513,7 @@ static cart *myOrder = nil;
     [statusLabel setFont:[UIFont boldSystemFontOfSize:11]];
     //[statusLabel setShadowColor:[UIColor blackColor]];
     //[statusLabel setShadowOffset:shadowOffset];
-    
+     
     UILabel *statusBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - margin - 48, 0, statusLabelWidth, statusLabelHeight / 2.0)];
     if ([statusLabel.text isEqualToString:@"报名中"])
         [statusBackLabel setBackgroundColor:BLUE];
@@ -523,15 +533,16 @@ static cart *myOrder = nil;
         [outLabel addSubview:statusBackLabel2];
         [outLabel addSubview:statusLabel];
     }
-
-    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - 100, outLabel.frame.size.height - 36, 100 - margin, 13)];
+     */
+    
+    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - 100, outLabel.frame.size.height - 20 /*36*/, 100 - margin, 14 /*13*/)];
     [priceLabel setText:[NSString stringWithFormat:@"￥%.2f", [[activity objectForKey:@"price"] floatValue]]];
     if ([[activity objectForKey:@"price"] floatValue] == 0) {
         [priceLabel setText:@"免费"];
     }
     [priceLabel setTextAlignment:NSTextAlignmentRight];
     [priceLabel setTextColor:DDARK_RED];
-    [priceLabel setFont:[UIFont boldSystemFontOfSize:13]];
+    [priceLabel setFont:[UIFont boldSystemFontOfSize:14]];
     //[priceLabel setShadowColor:DDARK_RED];
     //[priceLabel setShadowOffset:CGSizeMake(0.5, 0.5)];
     [outLabel addSubview:priceLabel];

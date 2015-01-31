@@ -106,7 +106,7 @@ static int infoCellID;
                 break;
                 
             case 3:
-                return 1;
+                return 0;
                 break;
                 
             default:
@@ -120,11 +120,11 @@ static int infoCellID;
                 break;
                 
             case 1: //历史
-                return 1;
+                return 0;
                 break;
                 
             case 2: //钱包，积分
-                return 1;
+                return 0;
                 break;
                 
             case 3: //收藏，商城
@@ -136,7 +136,7 @@ static int infoCellID;
                 break;
                 
             case 5:
-                return 1;
+                return 0;
                 break;
                 
             default:
@@ -204,7 +204,8 @@ static int infoCellID;
         UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.infoTable.frame.size.width, self.infoTable.frame.size.width * 0.618)];
         
         [imageV setImage:[UIImage imageNamed:@"user_background.png"]];
-        //[imageV setContentMode:UIViewContentModeScaleAspectFill];
+        [imageV setContentMode:UIViewContentModeScaleAspectFill];
+        [imageV setClipsToBounds:YES];
         
         //userImageView = imageV;
         [cell addSubview:imageV];

@@ -134,6 +134,10 @@ static int networing = 0;
     } else {
         content = [HTTPRequest stringFromDictionary:data];
         url = [NSString stringWithFormat:@"%@/%@?%@", SERVER_ADDRESS, page, content];
+        
+        //identify store
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"&app_store_id=%@", app_store_id]];
+        
         url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [request setURL:[NSURL URLWithString:url]];
     }

@@ -224,7 +224,7 @@ static BOOL askedForUserinfo = NO;
     
     if (self.justLaunched) {
         [self.storeTable addHeaderWithTarget:self action:@selector(loadActivitiesAsyncBridge) dateKey:@"tableCafeWall"];
-        //[self.storeTable addFooterWithTarget:self action:@selector(loadMoreActivitiesAsyncBridge)];
+        [self.storeTable addFooterWithTarget:self action:@selector(loadMoreActivitiesAsyncBridge)];
         self.justLaunched = NO;
         if ([user getCurrentID] != nil && [store getCurrentStoreID] != nil) {
             self.lastListUpdate = [NSDate date];

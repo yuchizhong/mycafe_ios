@@ -117,15 +117,15 @@ static int foodlistCellID;
     
     
     UIButton *customButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [customButton setFrame:CGRectMake(0, 0, 33, 33)];
+    [customButton setFrame:CGRectMake(0, 0, 31, 31)];
     // Add your action to your button
     [customButton addTarget:self action:@selector(goOrders) forControlEvents:UIControlEventTouchUpInside];
     // Customize your button as you want, with an image if you have a pictogram to display for example
     [customButton setImage:[UIImage imageNamed:@"order_cart.png"] forState:UIControlStateNormal];
     
     BBBadgeBarButtonItem *rightButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:customButton];
-    rightButton.badgeOriginX = 3;
-    rightButton.badgeOriginY = -2;
+    rightButton.badgeOriginX = 6;
+    rightButton.badgeOriginY = 0;
     cartButton = rightButton;
     [self.navigationItem setRightBarButtonItem:rightButton];
     
