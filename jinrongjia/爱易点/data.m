@@ -897,15 +897,6 @@ static BOOL gotUserinfo = NO;
 
 //分享
 + (void)shareText:(NSString*)text withDescription:(NSString*)desp andImage:(UIImage*)image withURL:(NSString *)url onViewController:(UIViewController *)vc {
-    if (url == nil) {
-        //app介绍和下载页
-        url = @"https://itunes.apple.com/us/app/unicafe-ka-fei-ting-zhi-neng/id933846850?ls=1&mt=8";
-    }
-    
-    if (image == nil) {
-        image = [UIImage imageNamed:@"support.png"];
-    }
-    
     NSArray *myActivities = @[[[WeixinSessionActivity alloc] init], [[WeixinTimelineActivity alloc] init]];
     if (![WXApi isWXAppInstalled]) {
         myActivities = nil;
