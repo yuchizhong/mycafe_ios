@@ -19,6 +19,7 @@
 		AB0AAE071A591DFD009DC134 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AAE001A591DFD009DC134 /* KVNProgress.m */; };
 		AB0AAE081A591DFD009DC134 /* KVNProgressConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AAE021A591DFD009DC134 /* KVNProgressConfiguration.m */; };
 		AB0AAE091A591DFD009DC134 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0AAE041A591DFD009DC134 /* KVNProgressView.xib */; };
+		AB0B56DA1A7D3BE100C04522 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0B56D91A7D3BE100C04522 /* logo.png */; };
 		AB0E7C501A14D31000DF3D95 /* purse.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E7C4C1A14CD3600DF3D95 /* purse.m */; };
 		AB0FF6931A36CCB60021D284 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0FF6911A36CCB60021D284 /* home@2x.png */; };
 		AB0FF6941A36CCB60021D284 /* home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0FF6921A36CCB60021D284 /* home@3x.png */; };
@@ -168,6 +169,7 @@
 		AB0AAE011A591DFD009DC134 /* KVNProgressConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgressConfiguration.h; sourceTree = "<group>"; };
 		AB0AAE021A591DFD009DC134 /* KVNProgressConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVNProgressConfiguration.m; sourceTree = "<group>"; };
 		AB0AAE041A591DFD009DC134 /* KVNProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVNProgressView.xib; sourceTree = "<group>"; };
+		AB0B56D91A7D3BE100C04522 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		AB0E7C4B1A14CD3600DF3D95 /* purse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = purse.h; sourceTree = "<group>"; };
 		AB0E7C4C1A14CD3600DF3D95 /* purse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = purse.m; sourceTree = "<group>"; };
 		AB0FF6911A36CCB60021D284 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
@@ -621,6 +623,7 @@
 		AB90763819EA69460024E70C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB0B56D91A7D3BE100C04522 /* logo.png */,
 				ABB83E531A7D11CA00BBD7A9 /* order_cart.png */,
 				AB00CED11A6FA887003E1ADB /* launch1.png */,
 				AB00CED21A6FA887003E1ADB /* launch2.png */,
@@ -947,6 +950,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0B56DA1A7D3BE100C04522 /* logo.png in Resources */,
 				AB293B9A19F195DD00589EE1 /* Main.storyboard in Resources */,
 				AB7CFAFC1A4DBF000020E2D6 /* icon_timeline@3x.png in Resources */,
 				AB90764219EA69460024E70C /* layout.png in Resources */,

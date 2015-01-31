@@ -12,6 +12,7 @@
 #define app_version     1.0 //用于检测app是否为最新版
 #define app_store_id    @"26"
 #define app_web_url     @"http://www.jrjkf.com"
+#define app_itunes      @"https://itunes.apple.com/us/app/jin-rong-jia-ka-fei/id962789847?ls=1&mt=8"
 
 #ifdef __OPTIMIZE__     //release
 #   define NSLog(...) {}
