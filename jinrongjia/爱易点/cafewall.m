@@ -465,7 +465,12 @@ static BOOL askedForUserinfo = NO;
         [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }
-    if ([store getCurrentStoreID] == nil || activities == nil || activities.count == 0) { //not used
+    if ([store getCurrentStoreID] == nil || activities == nil || activities.count == 0) {
+        [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }
+    
+    if (indexPath.row == 0) {
         [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }

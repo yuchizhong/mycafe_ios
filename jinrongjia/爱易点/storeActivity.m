@@ -565,7 +565,12 @@ static cart *myOrder = nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (activities == nil || activities.count == 0) { //not used
+    if (activities == nil || activities.count == 0) {
+        [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }
+    
+    if (indexPath.row == 0) {
         [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }
