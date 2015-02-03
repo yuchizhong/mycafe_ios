@@ -409,7 +409,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="mainView" translatesAutoresizingMaskIntoConstraints="NO" id="nee-Cz-7Tc" userLabel="首页">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -434,6 +434,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="首页" image="home.png" id="Bn5-Ea-IAt"/>
                     <navigationItem key="navigationItem" title="首页" id="Laj-aV-1Md">
                         <barButtonItem key="backBarButtonItem" title="返回" id="SgU-HG-tRc"/>
                     </navigationItem>
@@ -878,7 +879,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="PhK-Ck-39x" kind="relationship" relationship="viewControllers" id="b7N-kH-GbV"/>
+                        <segue destination="Oai-sZ-hIR" kind="relationship" relationship="viewControllers" id="M65-XX-fuP"/>
                         <segue destination="Nyl-dH-q7L" kind="relationship" relationship="viewControllers" id="BGF-Ql-IRp"/>
                         <segue destination="7uq-Tl-SEQ" kind="relationship" relationship="viewControllers" id="M3b-GG-xcN"/>
                         <segue destination="a5x-R3-Ehy" kind="relationship" relationship="viewControllers" id="UaQ-oi-elR"/>
@@ -886,7 +887,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVD-fs-CFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1653" y="-1479"/>
+            <point key="canvasLocation" x="-1599" y="-1485"/>
         </scene>
         <!--我-->
         <scene sceneID="9DZ-bU-t48">
@@ -1380,23 +1381,6 @@
             </objects>
             <point key="canvasLocation" x="-1010" y="565"/>
         </scene>
-        <!--首页-->
-        <scene sceneID="Utn-kH-NZy">
-            <objects>
-                <navigationController id="PhK-Ck-39x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="home.png" id="Bp6-Ns-QIC"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LU7-Mg-W9s">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Oai-sZ-hIR" kind="relationship" relationship="rootViewController" id="vm7-HJ-dSW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hwA-Mg-GsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-596" y="-2236"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="Jto-bl-zpK">
             <objects>
@@ -1736,7 +1720,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-bN-5gg" userLabel="foodTable">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-bN-5gg" userLabel="foodTable">
                                 <rect key="frame" x="76" y="64" width="524" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
@@ -1745,7 +1729,7 @@
                                     <outlet property="delegate" destination="4oV-zz-K2c" id="08g-59-8TY"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8AO-1J-nLI" userLabel="catagoryTable">
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8AO-1J-nLI" userLabel="catagoryTable">
                                 <rect key="frame" x="0.0" y="64" width="76" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1756,7 +1740,7 @@
                                     <outlet property="delegate" destination="4oV-zz-K2c" id="cg7-If-aNb"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3g-qp-dAf" userLabel="dot line">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3g-qp-dAf" userLabel="dot line">
                                 <rect key="frame" x="75" y="64" width="1" height="487"/>
                                 <color key="backgroundColor" red="0.54901960780000003" green="0.38431372549999998" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
