@@ -66,7 +66,8 @@ static UINavigationController *storeListNavController = nil;
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     //每个分栏跳转回根页面
     for (UINavigationController *cv in self.viewControllers) {
-        [cv popToRootViewControllerAnimated:NO];
+        if (cv.tabBarItem.tag != 0)
+            [cv popToRootViewControllerAnimated:NO];
     }
     
     /*

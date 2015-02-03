@@ -306,7 +306,7 @@ static any_store *storeDetailsPassed;
                     
                 case 1:
                     if (!storeDetailsPassed.discount) return cell;
-                    [l setText:@"有你咖啡特价"];
+                    [l setText:@"只看特价"];
                     break;
                     break;
                     

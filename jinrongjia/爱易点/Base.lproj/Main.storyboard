@@ -415,6 +415,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nee-Cz-7Tc" firstAttribute="top" secondItem="XFM-MG-IdP" secondAttribute="top" id="Fod-aC-obh"/>
                             <constraint firstAttribute="centerX" secondItem="nee-Cz-7Tc" secondAttribute="centerX" id="JDp-eL-OzM"/>
                             <constraint firstAttribute="width" secondItem="ThU-vG-rod" secondAttribute="width" id="Mif-py-OcF"/>
                             <constraint firstItem="aJL-zg-9y4" firstAttribute="top" secondItem="nee-Cz-7Tc" secondAttribute="bottom" id="NkF-R2-Lx3"/>
@@ -431,6 +432,9 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ThU-vG-rod"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Th2-29-emz"/>
                             </mask>
                         </variation>
                     </view>
@@ -1595,12 +1599,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70S-wn-ZjY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70S-wn-ZjY">
                                 <rect key="frame" x="16" y="0.0" width="568" height="600"/>
-                                <string key="text">UniCafe（有你咖啡）为联核科技有限公司旗下的O2O消费及展示平台。UniCafe为大众提供“满意百分百”的移动消费平台。有专业人士对商家筛选与质量监管，保障商家的服务质量，让顾客放心消费。
-
-图片版权
-本软件中所有饮品及餐点的图片由店家上传，与UniCafe无关，如有侵权，请与我们联系，我们将尽快删除侵权的图片。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>

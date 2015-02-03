@@ -182,7 +182,7 @@ static int type = 0;
     else if (total == 0)
         alert = [[UIAlertView alloc]initWithTitle:@"没有未付款" message:@"您的未付金额为零" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
     else {
-        alert = [[UIAlertView alloc]initWithTitle:@"付款" message:msg delegate:self cancelButtonTitle:@"稍后付款" otherButtonTitles:@"通过有你咖啡付款", @"当面付款", nil];
+        alert = [[UIAlertView alloc]initWithTitle:@"付款" message:msg delegate:self cancelButtonTitle:@"稍后付款" otherButtonTitles:@"通过钱包付款", @"当面付款", nil];
         alert.tag = 20;
     }
     [alert show];

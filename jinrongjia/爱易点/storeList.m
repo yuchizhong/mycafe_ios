@@ -346,6 +346,9 @@ static singleItem *itemDetailViewController = nil;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    
     if (self.showOnlyCollected) {
         [self.navigationItem setTitle:@"收藏的咖啡馆"];
     } else if (self.mall == nil || [self.mall isEqualToString:@""]) {
@@ -406,7 +409,7 @@ static singleItem *itemDetailViewController = nil;
     if (!firstLaunch)
         USER_BEGIN_LOADGING_FULL
     if (![user start]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"有必要更新" message:@"有你咖啡有必要的更新，请更新后使用" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"有必要更新" message:@"有必要的更新，请更新后使用" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil];
         alert.tag = -1;
         [alert show];
     }
@@ -419,12 +422,9 @@ static singleItem *itemDetailViewController = nil;
     [self performSelectorOnMainThread:@selector(goStart) withObject:nil waitUntilDone:YES];
 }
 
-/*
-//不显示列表页时不刷新
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.beaconManager stopRangingBeaconsInRegion:self.region];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 }
- */
 
 - (void)reloadStoreForMajor:(int)major andMinor:(int)minor {
     //预定时不判断

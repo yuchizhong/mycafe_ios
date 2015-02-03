@@ -507,7 +507,7 @@ static cart *instance = nil;
          [item setRightBarButtonItem:rightButton];
       }
    } else {
-      UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"不支持有你咖"
+      UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"不支持"
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:nil];
