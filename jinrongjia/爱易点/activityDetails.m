@@ -278,6 +278,8 @@ static activityDetails *acdetailInstance = nil;
     transactionID = purchase_result;
     if (purchase_result >= 0) {
         //pay
+        [info setObject:[NSString stringWithFormat:@"%ld", transactionID] forKey:@"transaction_id"];
+        
         if ([user payByCreditFor:info]) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"报名成功" message:nil delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
             [alertView show];
