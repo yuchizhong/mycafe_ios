@@ -54,7 +54,7 @@ static int infoCellID;
     [self.purseMoney setText:@"加载中"];
     [self.infoTable reloadData];
     //当前不需要显示钱包余额
-    //[NSThread detachNewThreadSelector:@selector(loadMoney) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(loadMoney) toTarget:self withObject:nil];
     self.stopMovingStatusBar = NO;
     if (self.infoTable.contentOffset.y > self.infoTable.frame.size.width * 0.618 && !self.stopMovingStatusBar)
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
@@ -75,11 +75,11 @@ static int infoCellID;
     if (self.usingThreads > 0)
         return;
     self.usingThreads++;
-    float m = -1;
+    NSInteger m = -1;
     while (m < 0) {
-        m = [user getPurseMoneyAsync];
+        m = [user getCreditForStoreIDAsync:app_store_id];
     }
-    [self.purseMoney setText:[NSString stringWithFormat:@"%.2f元", m]];
+    [self.purseMoney setText:[NSString stringWithFormat:@"剩余%ld分", m]];
     self.usingThreads--;
 }
 
@@ -124,7 +124,7 @@ static int infoCellID;
                 break;
                 
             case 2: //钱包，积分
-                return 0;
+                return 1;
                 break;
                 
             case 3: //收藏，商城
@@ -163,7 +163,7 @@ static int infoCellID;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if (section == 0)
+    if (section == 0 || ([user getCurrentID] != nil && section == 2))
         return 40;
     return 0;
 }
@@ -269,6 +269,13 @@ static int infoCellID;
             [l setText:@"消费记录"];
         } else if (indexPath.section == 2 && indexPath.row == 0) {
             [l setText:@"我的积分"];
+            [l setFrame:CGRectMake(16, 0, 150, CELL_HEIGHT)];
+            [l setTextAlignment:NSTextAlignmentLeft];
+            
+            //add value label
+            [self.purseMoney setFrame:CGRectMake(self.infoTable.frame.size.width - 156, 0, 140, CELL_HEIGHT)];
+            [self.purseMoney setTextAlignment:NSTextAlignmentRight];
+            [cell addSubview:self.purseMoney];
         } else if (indexPath.section == 3 && indexPath.row == 0) {
             [l setText:@"我的收藏"];
         } else if (indexPath.section == 3 && indexPath.row == 1) {
@@ -339,7 +346,7 @@ static int infoCellID;
             [self.navigationController pushViewController:historyOrderController animated:YES];
         } else if (indexPath.section == 2 && indexPath.row == 0) {
             //积分
-            UIViewController *v = [self.storyboard instantiateViewControllerWithIdentifier:@"creditList"];
+            UIViewController *v = [self.storyboard instantiateViewControllerWithIdentifier:@"purse"];
             [self.navigationController pushViewController:v animated:YES];
         } else if (indexPath.section == 3 && indexPath.row == 0) {
             //收藏

@@ -471,7 +471,7 @@ static cart *myOrder = nil;
         [outLabel addSubview:disLabel];
     }
      */
-    /*
+    
     UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - margin - 100, outLabel.frame.size.height - 19, 100, 12)];
     [countLabel setText:[NSString stringWithFormat:@"%d/%d人", [[activity objectForKey:@"enrolled"] intValue], [[activity objectForKey:@"max"] intValue]]];
     if ([[activity objectForKey:@"max"] intValue] == 0) {
@@ -481,7 +481,6 @@ static cart *myOrder = nil;
     [countLabel setTextColor:T_COLOR_SUB];
     [countLabel setFont:[UIFont systemFontOfSize:13]];
     [outLabel addSubview:countLabel];
-     */
     
     /******************** status ********************/
     //need bottom left and right corner to be rounded
@@ -535,11 +534,22 @@ static cart *myOrder = nil;
     }
      */
     
-    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - 100, outLabel.frame.size.height - 20 /*36*/, 100 - margin, 14 /*13*/)];
-    [priceLabel setText:[NSString stringWithFormat:@"￥%.2f", [[activity objectForKey:@"price"] floatValue]]];
+    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(outLabel.frame.size.width - 200, outLabel.frame.size.height - 36, 200 - margin, 14)];
+    NSString *str = [NSString stringWithFormat:@"￥%.2f", [[activity objectForKey:@"price"] floatValue]];
     if ([[activity objectForKey:@"price"] floatValue] == 0) {
-        [priceLabel setText:@"免费"];
+        str = @"免费";
     }
+    
+    NSString *str2 = [NSString stringWithFormat:@"%ld积分", [[activity objectForKey:@"creditPrice"] integerValue]];
+    if ([[activity objectForKey:@"creditPrice"] integerValue] == 0) {
+        str2 = @"免积分";
+    } else if ([[activity objectForKey:@"creditPrice"] integerValue] < 0) {
+        str2 = [NSString stringWithFormat:@"赠%ld积分", -[[activity objectForKey:@"creditPrice"] integerValue]];
+    }
+    
+    str = [[str stringByAppendingString:@" / "] stringByAppendingString:str2];
+    [priceLabel setText:str];
+    
     [priceLabel setTextAlignment:NSTextAlignmentRight];
     [priceLabel setTextColor:DDARK_RED];
     [priceLabel setFont:[UIFont boldSystemFontOfSize:14]];

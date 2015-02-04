@@ -94,7 +94,7 @@ static purse *instance = nil;
     if (section == 0) { //付款方式
         UIView *v = [[UIView alloc] init];
         v.backgroundColor = [UIColor clearColor];
-        UILabel *cz = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 100, 30)];
+        UILabel *cz = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 300, 30)];
         [cz setText:@"积分可用来结账或购买活动"];
         [cz setFont:[UIFont boldSystemFontOfSize:15]];
         [cz setTextAlignment:NSTextAlignmentLeft];
@@ -194,7 +194,7 @@ static purse *instance = nil;
     
     //draw separator line
     if (indexPath.section > 0) {
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 44, tableView.frame.size.width, 0.5)];
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 60, tableView.frame.size.width, 0.5)];
         UIGraphicsBeginImageContext(imageView.frame.size);
         [imageView.image drawInRect:CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height)];
         CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
@@ -224,6 +224,8 @@ static purse *instance = nil;
         UIGraphicsEndImageContext();
         [cell addSubview:imageView];
     }
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
