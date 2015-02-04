@@ -10,6 +10,8 @@
 #import "creditMallList.h"
 #import "rootTabViewController.h"
 
+#define LARE_IMAGE_ASPECT 1.0
+
 /*
 static NSArray *allProvinces = nil;
 static NSMutableArray *allCities = nil;
@@ -370,6 +372,9 @@ static singleItem *itemDetailViewController = nil;
 - (void)loadWebPage {
     UITableView *v = [[UITableView alloc] initWithFrame:mainPage.frame];
     [v setTag:-1];
+    [v setShowsVerticalScrollIndicator:NO];
+    [v setShowsHorizontalScrollIndicator:NO];
+    [v setBounces:NO];
     [v setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [v setDelegate:self];
     [v setDataSource:self];
@@ -646,7 +651,7 @@ static singleItem *itemDetailViewController = nil;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.tag == -1) {
         if (indexPath.section == 0) {
-            return self.view.frame.size.width * 0.36;
+            return self.view.frame.size.width * LARE_IMAGE_ASPECT;
         } else if (indexPath.section == 2) {
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
             paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
@@ -655,7 +660,11 @@ static singleItem *itemDetailViewController = nil;
             CGRect sizeTT = [@"测试文字" boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 32, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil];
             float margin = (44 - sizeTT.size.height) / 2;
             
-            CGRect sizeT = [J_DESP boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 32, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil];
+            NSString *str = J_DESP;
+            if (indexPath.row == 0) {
+                str = J_HOURS;
+            }
+            CGRect sizeT = [str boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 32, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil];
             float h = sizeT.size.height + margin * 2;
             if (h < 44) {
                 return 44;
@@ -690,7 +699,7 @@ static singleItem *itemDetailViewController = nil;
         float cellHeight = 44;
 
         if (indexPath.section == 0) {
-            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width * 0.36)];
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width * LARE_IMAGE_ASPECT)];
             [imgView setClipsToBounds:YES];
             [imgView setContentMode:UIViewContentModeScaleAspectFill];
             [imgView setImage:[UIImage imageNamed:@"jrj.png"]];
@@ -751,9 +760,28 @@ static singleItem *itemDetailViewController = nil;
             [l setTextColor:[UIColor blackColor]];
             [l setFont:UI_TEXT_FONT];
             [cell addSubview:l];
-            
-            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
+        
+        //draw line
+        if (indexPath.section > 0) {
+            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, cellHeight, tableView.frame.size.width, 0.5)];
+            UIGraphicsBeginImageContext(imageView.frame.size);
+            [imageView.image drawInRect:CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height)];
+            CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 15.0);  //线宽
+            CGContextSetAllowsAntialiasing(UIGraphicsGetCurrentContext(), YES);
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0.8, 0.8, 0.8, 1.0);  //颜色
+            CGContextBeginPath(UIGraphicsGetCurrentContext());
+            CGContextMoveToPoint(UIGraphicsGetCurrentContext(), 0, 0);  //起点坐标
+            CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), tableView.frame.size.width, 0);   //终点坐标
+            CGContextStrokePath(UIGraphicsGetCurrentContext());
+            imageView.image=UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            [cell addSubview:imageView];
+        }
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
         return cell;
     }
     
@@ -936,6 +964,8 @@ static singleItem *itemDetailViewController = nil;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.tag == -1) {
+        [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
+        
         if (indexPath.section == 1) {
             switch (indexPath.row) {
                 case 0: //地图
@@ -948,7 +978,6 @@ static singleItem *itemDetailViewController = nil;
                     break;
             }
         }
-        [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }
     
@@ -990,6 +1019,8 @@ static singleItem *itemDetailViewController = nil;
     toLocation.name = @"金融加咖啡";
     [MKMapItem openMapsWithItems:[NSArray arrayWithObjects:currentLocation, toLocation, nil] launchOptions:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:MKLaunchOptionsDirectionsModeWalking, nil] forKeys:[NSArray arrayWithObjects:MKLaunchOptionsDirectionsModeKey, nil]]];
 }
+
+
 
 
 

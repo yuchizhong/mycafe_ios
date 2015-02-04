@@ -14,7 +14,7 @@
 #define app_web_url     @"https://182.92.130.225/jrj.html"
 #define app_itunes      @"https://itunes.apple.com/us/app/jin-rong-jia-ka-fei/id962789847?ls=1&mt=8"
 
-#define J_HOURS @"10:00 - 22:00"
+#define J_HOURS @"营业时间：10:00 - 22:00"
 #define J_DESP @"金融家咖啡厅是由众多金融界优秀人士筹建、开放式资源整合的金融主题咖啡厅，力求打造国内优秀的、具有影响力的金融服务平台。咖啡厅股东分布在金融八大类二十余个细分行业，重点处理中后期项目和中大型项目；可提供银行、证券、信托、投资、债权、二级市场、财顾、跨界等各类金融服务，可满足企业各种金融需求。"
 #define J_LOCATION @"建外SOHO 9号别墅V0115室"
 #define J_PHONE @"(010)5900176"

@@ -56,11 +56,13 @@ static int infoCellID;
     [self.infoTable reloadData];
     //当前不需要显示钱包余额
     [NSThread detachNewThreadSelector:@selector(loadMoney) toTarget:self withObject:nil];
+    /*
     self.stopMovingStatusBar = NO;
     if (self.infoTable.contentOffset.y > self.infoTable.frame.size.width * 0.618 && !self.stopMovingStatusBar)
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     else if (!self.stopMovingStatusBar)
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+     */
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -68,8 +70,10 @@ static int infoCellID;
     if (self.shouldShowNavbar)
         [self.navigationController setNavigationBarHidden:NO animated:animated];
     self.shouldShowNavbar = YES;
+    /*
     self.stopMovingStatusBar = YES;
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+     */
 }
 
 - (void)loadMoney {
@@ -164,8 +168,8 @@ static int infoCellID;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if (section == 0 || ([user getCurrentID] != nil && section == 2))
-        return 40;
+    if (section == 0 || ([user getCurrentID] != nil && section == 1) || ([user getCurrentID] != nil && section == 2))
+        return 25;
     return 0;
 }
 
@@ -176,12 +180,14 @@ static int infoCellID;
     return CELL_HEIGHT;
 }
 
+/*
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView.contentOffset.y > self.infoTable.frame.size.width * 0.618 && !self.stopMovingStatusBar)
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     else if (!self.stopMovingStatusBar)
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
+ */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;

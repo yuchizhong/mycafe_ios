@@ -241,7 +241,7 @@ static int cellID = 0;
         UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(tableView.frame.size.width - 210, UI_HISTORY_ORDER_CELL_HEIGHT / 2.0, 200, UI_HISTORY_ORDER_CELL_HEIGHT / 2.0)];
         [priceLabel setText:[NSString stringWithFormat:@"￥%.0f", [(NSString*)[[orderList objectAtIndex:indexPath.row] objectForKey:@"total"] floatValue]]];
         [priceLabel setTextAlignment:NSTextAlignmentRight];
-        [priceLabel setTextColor:[UIColor blackColor]];
+        [priceLabel setTextColor:DARK_RED];
         [priceLabel setFont:UI_TEXT_FONT];
         [cell addSubview:priceLabel];
     }

@@ -179,6 +179,7 @@ static int cellID = 0;
             [timeLabel setFont:UI_TEXT_FONT];
             [cell addSubview:timeLabel];
             
+            /*
             UILabel *status = [[UILabel alloc] initWithFrame:CGRectMake(tableView.frame.size.width - 210, 0, 200, 44 / 2.0)];
             NSString *statusStr = [orderInfo statusStringForPayed:[[[orderList objectAtIndex:indexPath.row] objectForKey:@"payed"] intValue]
                                                      andOrderFlag:[[[orderList objectAtIndex:indexPath.row] objectForKey:@"printed"] intValue]
@@ -188,6 +189,7 @@ static int cellID = 0;
             [status setTextColor:[UIColor redColor]];
             [status setFont:UI_TEXT_FONT];
             [cell addSubview:status];
+             */
         } else {
             UILabel *status = [[UILabel alloc] initWithFrame:CGRectMake(tableView.frame.size.width - 210, 0, 200, 44 / 2.0)];
             [status setText:@"未提交"];
