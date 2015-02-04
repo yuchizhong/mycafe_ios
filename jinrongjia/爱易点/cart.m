@@ -459,8 +459,7 @@ static cart *instance = nil;
       UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
                                                                                    target:self
                                                                                    action:@selector(clearAll)];
-      [item setRightBarButtonItem:clearButton];
-
+      
       [item setRightBarButtonItems:@[rightButton, clearButton]];
    }
       /*} else if (![store preorder_mode]) {
@@ -511,9 +510,11 @@ static cart *instance = nil;
    }
    [self reLoadForm];
    
+   /*
    if ([user getCurrentID] != nil) {
       [NSThread detachNewThreadSelector:@selector(loadCurrentHistory) toTarget:self withObject:nil];
    }
+    */
 }
 
 - (void)viewWillAppear:(BOOL)animated {
