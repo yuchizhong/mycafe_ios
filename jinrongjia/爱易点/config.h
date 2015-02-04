@@ -9,6 +9,8 @@
 #ifndef ____config_h
 #define ____config_h
 
+#define ENABLE_PAYMENT  YES
+
 #define app_version     1.0 //用于检测app是否为最新版
 #define app_store_id    @"26"
 #define app_web_url     @"https://182.92.130.225/jrj.html"

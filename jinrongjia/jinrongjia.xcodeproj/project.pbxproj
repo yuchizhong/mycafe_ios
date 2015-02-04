@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB00CECF1A6F9DE8003E1ADB /* launchInstrcutions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB00CECE1A6F9DE8003E1ADB /* launchInstrcutions.m */; };
-		AB00CED41A6FA887003E1ADB /* launch1.png in Resources */ = {isa = PBXBuildFile; fileRef = AB00CED11A6FA887003E1ADB /* launch1.png */; };
-		AB00CED51A6FA887003E1ADB /* launch2.png in Resources */ = {isa = PBXBuildFile; fileRef = AB00CED21A6FA887003E1ADB /* launch2.png */; };
-		AB00CED71A6FA8D6003E1ADB /* launch3.png in Resources */ = {isa = PBXBuildFile; fileRef = AB00CED61A6FA8D6003E1ADB /* launch3.png */; };
 		AB05427C19EA678300D86BC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05427B19EA678300D86BC7 /* main.m */; };
 		AB05427F19EA678300D86BC7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB05427E19EA678300D86BC7 /* AppDelegate.mm */; };
 		AB05428A19EA678300D86BC7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB05428819EA678300D86BC7 /* LaunchScreen.xib */; };
@@ -110,7 +107,6 @@
 		AB9813531A393EDF00791274 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9813521A393EDF00791274 /* BBBadgeBarButtonItem.m */; };
 		AB9813551A3947B100791274 /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9813541A3947B100791274 /* cart.png */; };
 		AB9EECB019F402EB00400453 /* db.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9EECAF19F402EB00400453 /* db.m */; };
-		ABA00FBB1A5BA5A600414E70 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA00FBA1A5BA5A600414E70 /* CoreBluetooth.framework */; };
 		ABA0815A1A223CBE00EFABF0 /* nouser.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA081591A223CBE00EFABF0 /* nouser.png */; };
 		ABA177761A06821800C3F5E6 /* detailsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AB47613619FF67110039F942 /* detailsMenu.m */; };
 		ABA889E11A30AD640020E1AF /* creditList.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA889E01A30AD640020E1AF /* creditList.m */; };
@@ -149,9 +145,6 @@
 /* Begin PBXFileReference section */
 		AB00CECD1A6F9DE8003E1ADB /* launchInstrcutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = launchInstrcutions.h; sourceTree = "<group>"; };
 		AB00CECE1A6F9DE8003E1ADB /* launchInstrcutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = launchInstrcutions.m; sourceTree = "<group>"; };
-		AB00CED11A6FA887003E1ADB /* launch1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch1.png; sourceTree = "<group>"; };
-		AB00CED21A6FA887003E1ADB /* launch2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch2.png; sourceTree = "<group>"; };
-		AB00CED61A6FA8D6003E1ADB /* launch3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch3.png; sourceTree = "<group>"; };
 		AB05427619EA678300D86BC7 /* 爱易点.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "爱易点.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB05427A19EA678300D86BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB05427B19EA678300D86BC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -315,7 +308,6 @@
 		AB9813541A3947B100791274 /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
 		AB9EECAF19F402EB00400453 /* db.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = db.m; sourceTree = "<group>"; };
 		AB9EECB119F4030100400453 /* db.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = db.h; sourceTree = "<group>"; };
-		ABA00FBA1A5BA5A600414E70 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		ABA081591A223CBE00EFABF0 /* nouser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nouser.png; sourceTree = "<group>"; };
 		ABA889DF1A30AD640020E1AF /* creditList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = creditList.h; sourceTree = "<group>"; };
 		ABA889E01A30AD640020E1AF /* creditList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = creditList.m; sourceTree = "<group>"; };
@@ -368,7 +360,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABA00FBB1A5BA5A600414E70 /* CoreBluetooth.framework in Frameworks */,
 				ABE311CD1A4D807C00B52132 /* Social.framework in Frameworks */,
 				ABFF242E1A1F2B5600031711 /* CoreFoundation.framework in Frameworks */,
 				AB378DC01A1C918900B79F08 /* AudioToolbox.framework in Frameworks */,
@@ -628,9 +619,6 @@
 				AB51109B1A824389005AFB3B /* jrj.png */,
 				AB0B56D91A7D3BE100C04522 /* logo.png */,
 				ABB83E531A7D11CA00BBD7A9 /* order_cart.png */,
-				AB00CED11A6FA887003E1ADB /* launch1.png */,
-				AB00CED21A6FA887003E1ADB /* launch2.png */,
-				AB00CED61A6FA8D6003E1ADB /* launch3.png */,
 				AB4A285A1A5E9818009FD7D1 /* sendCoffee.png */,
 				ABABB5801A5D598700C4E8EE /* wall.png */,
 				ABABB5811A5D598700C4E8EE /* wall@2x.png */,
@@ -675,7 +663,6 @@
 			isa = PBXGroup;
 			children = (
 				AB7BD2371A7A88F200F597D3 /* SDWebImage.framework */,
-				ABA00FBA1A5BA5A600414E70 /* CoreBluetooth.framework */,
 				ABE311CC1A4D807C00B52132 /* Social.framework */,
 				ABFF242D1A1F2B5600031711 /* CoreFoundation.framework */,
 				AB378DBF1A1C918900B79F08 /* AudioToolbox.framework */,
@@ -964,13 +951,10 @@
 				AB8D52E51A226C4C00E24E0A /* sub.png in Resources */,
 				ABF934A61A1B70C900940880 /* homelarge.png in Resources */,
 				AB0FF6941A36CCB60021D284 /* home@3x.png in Resources */,
-				AB00CED41A6FA887003E1ADB /* launch1.png in Resources */,
 				ABFA65CB1A5A533500C7EFBA /* phoneicon.png in Resources */,
-				AB00CED51A6FA887003E1ADB /* launch2.png in Resources */,
 				AB64682219EEEC7D0094BC33 /* user.png in Resources */,
 				AB5519F51A4DADD200494BF7 /* barRedBack.png in Resources */,
 				AB19CBC91A06251200857348 /* star_half.png in Resources */,
-				AB00CED71A6FA8D6003E1ADB /* launch3.png in Resources */,
 				AB4A5EE119EFF7D500EDB06C /* user_background.png in Resources */,
 				AB88C06A1A3962C5000633EF /* discount.png in Resources */,
 				AB4FDEAE1A39715A0045666E /* activityhomeshadow.png in Resources */,

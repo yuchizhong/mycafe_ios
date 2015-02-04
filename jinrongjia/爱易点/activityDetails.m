@@ -106,7 +106,10 @@ static activityDetails *acdetailInstance = nil;
             [rightButton setEnabled:NO];
         }
         
-        [self.navigationItem setRightBarButtonItems:@[rightButton, shareButton]];
+        if (ENABLE_PAYMENT)
+            [self.navigationItem setRightBarButtonItems:@[rightButton, shareButton]];
+        else
+            [self.navigationItem setRightBarButtonItem:shareButton];
     }
     
     [self.webView.scrollView setShowsVerticalScrollIndicator:NO];
@@ -306,6 +309,10 @@ static activityDetails *acdetailInstance = nil;
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == -2 && buttonIndex == 1) {
+        UIViewController *purseView = [self.storyboard instantiateViewControllerWithIdentifier:@"purse"];
+        [self.navigationController pushViewController:purseView animated:YES];
+    }
     if (alertView.tag == 10 && buttonIndex == 1) {
         [self enroll];
     }

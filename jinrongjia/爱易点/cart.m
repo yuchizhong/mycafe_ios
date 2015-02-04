@@ -178,7 +178,7 @@ static cart *instance = nil;
          case 0: //积分支付
             if (creditValue < creditNeeded) {
                UIViewController *purseView = [self.storyboard instantiateViewControllerWithIdentifier:@"purse"];
-               [self presentViewController:purseView animated:YES completion:nil];
+               [self.navigationController pushViewController:purseView animated:YES];
             } else {
                success = [user payByCreditForTotalCredit:(NSInteger)(totalToPay * 100 * creditToCent)];
                canClearOrder = YES;
@@ -460,7 +460,10 @@ static cart *instance = nil;
                                                                                    target:self
                                                                                    action:@selector(clearAll)];
       
-      [item setRightBarButtonItems:@[rightButton, clearButton]];
+      if (ENABLE_PAYMENT)
+         [item setRightBarButtonItems:@[rightButton, clearButton]];
+      else
+         [item setRightBarButtonItem:clearButton];
    }
       /*} else if (![store preorder_mode]) {
          rightButton = [[UIBarButtonItem alloc] initWithTitle:@"店外"
