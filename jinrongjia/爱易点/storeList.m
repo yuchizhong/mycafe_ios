@@ -10,7 +10,7 @@
 #import "creditMallList.h"
 #import "rootTabViewController.h"
 
-#define LARE_IMAGE_ASPECT 1.0
+#define LARE_IMAGE_ASPECT 0.8375
 
 /*
 static NSArray *allProvinces = nil;
