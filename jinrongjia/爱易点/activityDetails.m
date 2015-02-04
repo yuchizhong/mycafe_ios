@@ -269,6 +269,7 @@ static activityDetails *acdetailInstance = nil;
 - (void)enroll {
     NSMutableDictionary *info = [self.activityInfo mutableCopy];
     [info setValue:[user getCurrentID] forKey:@"user_name"];
+    [info setValue:[user getCurrentID] forKey:@"username"];
     [info setValue:@"activity" forKey:@"mall"];
     NSInteger purchase_result = [user purchaseMallItem:info];
     transactionID = purchase_result;
