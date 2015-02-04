@@ -645,7 +645,24 @@ static singleItem *itemDetailViewController = nil;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.tag == -1) {
-        todo
+        if (indexPath.section == 0) {
+            return self.view.frame.size.width * 0.36;
+        } else if (indexPath.section == 2) {
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+            paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+            NSDictionary *attribute = @{NSFontAttributeName:UI_TEXT_FONT, NSParagraphStyleAttributeName:paragraphStyle.copy};
+            
+            CGRect sizeTT = [@"测试文字" boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 32, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil];
+            float margin = (44 - sizeTT.size.height) / 2;
+            
+            CGRect sizeT = [J_DESP boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 32, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil];
+            float h = sizeT.size.height + margin * 2;
+            if (h < 44) {
+                return 44;
+            }
+            return h;
+        }
+        return 44;
     }
     return UI_STORE_TABLE_CELL_HEIGHT;
 }
@@ -670,7 +687,73 @@ static singleItem *itemDetailViewController = nil;
     }
     
     if (tableView.tag == -1) {
-        todo
+        float cellHeight = 44;
+
+        if (indexPath.section == 0) {
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width * 0.36)];
+            [imgView setClipsToBounds:YES];
+            [imgView setContentMode:UIViewContentModeScaleAspectFill];
+            [imgView setImage:[UIImage imageNamed:@"jrj.png"]];
+            [cell addSubview:imgView];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        } else if (indexPath.section == 1) {
+            UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(16, 1, tableView.frame.size.width - 63, 43)];
+            [l setNumberOfLines:0];
+            [l setLineBreakMode:NSLineBreakByCharWrapping];
+            NSString *goImg = nil;
+            switch (indexPath.row) {
+                case 0:
+                    [l setText:[NSString stringWithFormat:@"%@", J_LOCATION]];
+                    goImg = @"mapicon.png";
+                    break;
+                    
+                default:
+                    [l setText:[NSString stringWithFormat:@"%@", J_PHONE]];
+                    goImg = @"phoneicon.png";
+                    break;
+            }
+            UIImageView *go = [[UIImageView alloc] initWithFrame:CGRectMake(tableView.frame.size.width - 37.5, 8, 28, 28)];
+            [go setImage:[UIImage imageNamed:goImg]];
+            [go setContentMode:UIViewContentModeScaleAspectFit];
+            [cell addSubview:go];
+            
+            [l setTextAlignment:NSTextAlignmentLeft];
+            [l setTextColor:[UIColor blackColor]];
+            [l setFont:UI_TEXT_FONT];
+            [cell addSubview:l];
+        } else if (indexPath.section == 2) {
+            NSString *showStr;
+            switch (indexPath.row) {
+                case 0:
+                    showStr = J_HOURS;
+                    break;
+                    
+                default:
+                    showStr = J_DESP;
+                    break;
+            }
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+            paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+            NSDictionary *attribute = @{NSFontAttributeName:UI_TEXT_FONT, NSParagraphStyleAttributeName:paragraphStyle.copy};
+            CGRect sizeTT = [@"测试文字" boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 32, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil];
+            float margin = (44 - sizeTT.size.height) / 2;
+            
+            CGRect sizeT = [showStr boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 32, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil];
+            float h = sizeT.size.height + margin * 2;
+            if (h > 44)
+                cellHeight = h;
+            
+            UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(16, margin, tableView.frame.size.width - 32, sizeT.size.height)];
+            [l setNumberOfLines:0];
+            [l setText:showStr];
+            [l setLineBreakMode:NSLineBreakByCharWrapping];
+            [l setTextAlignment:NSTextAlignmentLeft];
+            [l setTextColor:[UIColor blackColor]];
+            [l setFont:UI_TEXT_FONT];
+            [cell addSubview:l];
+            
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        }
         return cell;
     }
     
@@ -853,7 +936,18 @@ static singleItem *itemDetailViewController = nil;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.tag == -1) {
-        todo
+        if (indexPath.section == 1) {
+            switch (indexPath.row) {
+                case 0: //地图
+                    [self openMap];
+                    break;
+                    
+                default: //电话
+                    if (![J_PHONE isEqualToString:@""])
+                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", J_PHONE]]];
+                    break;
+            }
+        }
         [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }
@@ -887,7 +981,15 @@ static singleItem *itemDetailViewController = nil;
     [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
+- (void)openMap {
+    CLLocationCoordinate2D dest = CLLocationCoordinate2DMake(39.911543, 116.464579);
+    
+    MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
+    MKMapItem *toLocation = [[MKMapItem alloc]initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:dest addressDictionary:nil]];
+    
+    toLocation.name = @"金融加咖啡";
+    [MKMapItem openMapsWithItems:[NSArray arrayWithObjects:currentLocation, toLocation, nil] launchOptions:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:MKLaunchOptionsDirectionsModeWalking, nil] forKeys:[NSArray arrayWithObjects:MKLaunchOptionsDirectionsModeKey, nil]]];
+}
 
 
 

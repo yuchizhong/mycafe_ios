@@ -50,6 +50,7 @@
 		AB4A5EE119EFF7D500EDB06C /* user_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4A5EE019EFF7D500EDB06C /* user_background.png */; };
 		AB4FDEAC1A396B260045666E /* storeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = AB453E4B1A3898870098A33F /* storeActivity.m */; };
 		AB4FDEAE1A39715A0045666E /* activityhomeshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4FDEAD1A39715A0045666E /* activityhomeshadow.png */; };
+		AB51109C1A824389005AFB3B /* jrj.png in Resources */ = {isa = PBXBuildFile; fileRef = AB51109B1A824389005AFB3B /* jrj.png */; };
 		AB5519F51A4DADD200494BF7 /* barRedBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5519F41A4DADD200494BF7 /* barRedBack.png */; };
 		AB5868FC1A43EEE300774649 /* storeIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5868FB1A43EEE300774649 /* storeIntro.m */; };
 		AB5C1D041A48104F00D098A6 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5C1D031A48104F00D098A6 /* NIDropDown.m */; };
@@ -217,6 +218,7 @@
 		AB4A285A1A5E9818009FD7D1 /* sendCoffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendCoffee.png; sourceTree = "<group>"; };
 		AB4A5EE019EFF7D500EDB06C /* user_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_background.png; sourceTree = "<group>"; };
 		AB4FDEAD1A39715A0045666E /* activityhomeshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activityhomeshadow.png; sourceTree = "<group>"; };
+		AB51109B1A824389005AFB3B /* jrj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jrj.png; sourceTree = "<group>"; };
 		AB5519F41A4DADD200494BF7 /* barRedBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barRedBack.png; sourceTree = "<group>"; };
 		AB5868FA1A43EEE300774649 /* storeIntro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storeIntro.h; sourceTree = "<group>"; };
 		AB5868FB1A43EEE300774649 /* storeIntro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storeIntro.m; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 		AB90763819EA69460024E70C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB51109B1A824389005AFB3B /* jrj.png */,
 				AB0B56D91A7D3BE100C04522 /* logo.png */,
 				ABB83E531A7D11CA00BBD7A9 /* order_cart.png */,
 				AB00CED11A6FA887003E1ADB /* launch1.png */,
@@ -994,6 +997,7 @@
 				AB0FF6971A36CCBF0021D284 /* user@2x.png in Resources */,
 				ABB83E541A7D11CA00BBD7A9 /* order_cart.png in Resources */,
 				ABABB5831A5D598700C4E8EE /* wall.png in Resources */,
+				AB51109C1A824389005AFB3B /* jrj.png in Resources */,
 				AB8EAC4F1A4DA6B8003AE807 /* icon_timeline.png in Resources */,
 				ABABB5851A5D598700C4E8EE /* wall@3x.png in Resources */,
 				ABAF260E1A7BBAE30073C447 /* Images.xcassets in Resources */,

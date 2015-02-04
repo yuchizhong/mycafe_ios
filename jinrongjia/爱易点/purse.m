@@ -160,11 +160,11 @@ static purse *instance = nil;
         NSString *payMethod = nil;
         switch (indexPath.row) {
             case 0:
-                payMethod = @"方法一：到金融家咖啡厅前台充值\n地址：建外SOHO 9号别墅V0115室"/*@"支付宝支付"*/;
+                payMethod = [NSString stringWithFormat:@"方法一：到金融家咖啡厅前台充值\n地址：%@", J_LOCATION] /*@"支付宝支付"*/;
                 break;
                 
             case 1:
-                payMethod = @"方法二：支付宝汇款至xxxxxx，并打电话至金融家咖啡厅前台充值，前台电话：(010)59001762"/*@"微信支付"*/;
+                payMethod = [NSString stringWithFormat:@"方法二：支付宝汇款至%@，并打电话至金融家咖啡厅前台充值，前台电话：%@", J_ALIPAY_ACCOUNT, J_PHONE] /*@"微信支付"*/;
                 break;
                 
                 /*
