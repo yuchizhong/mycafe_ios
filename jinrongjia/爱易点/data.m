@@ -632,9 +632,9 @@ static BOOL gotUserinfo = NO;
     return [self payByPurseFor:dict];
 }
 
-+(BOOL)payByCreditForTotalCredit:(NSInteger)totalCredit {
++ (BOOL)payByCreditForTotalCredit:(NSInteger)totalCredit {
     USER_BEGIN_LOADGING
-    NSString *amount = [NSString stringWithFormat:@"%d", totalCredit];
+    NSString *amount = [NSString stringWithFormat:@"%ld", totalCredit];
     NSDictionary* dict = @{
                            @"amount"  : amount,  //金额
                            @"username": currentID,
@@ -650,7 +650,7 @@ static BOOL gotUserinfo = NO;
         if ([databody isEqualToString:@"OK"]) {
             NSInteger creditValue = [self getCreditForStoreIDAsync:storeID];
             USER_END_LOADGING
-            [HTTPRequest alert:[NSString stringWithFormat:@"积分支付成功\n剩余积分为%d分", creditValue]];
+            [HTTPRequest alert:[NSString stringWithFormat:@"积分支付成功\n剩余积分为%ld分", creditValue]];
             return YES;
         } else {
             USER_END_LOADGING
@@ -664,6 +664,31 @@ static BOOL gotUserinfo = NO;
 }
 
 ////////////////////////////////////
+
++ (BOOL)payByCreditFor:(NSDictionary*)dict {
+    USER_BEGIN_LOADGING
+    NSMutableDictionary *dic = [dict mutableCopy];
+    [dic setObject:@"credit" forKey:@"channel"];
+    NSError* error;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&error];
+    NSData *rawdata = [HTTPRequest syncPost:SERVER_PINGPP_PAY withRawData:data];
+    NSString* databody = [[NSMutableString alloc] initWithData:rawdata encoding:NSUTF8StringEncoding];
+    if (databody != nil && databody.length > 0) {
+        if ([databody isEqualToString:@"OK"]) {
+            NSInteger creditValue = [self getCreditForStoreIDAsync:storeID];
+            USER_END_LOADGING
+            [HTTPRequest alert:[NSString stringWithFormat:@"积分支付成功\n剩余积分为%ld分", creditValue]];
+            return YES;
+        } else {
+            USER_END_LOADGING
+            [HTTPRequest alert:[NSString stringWithFormat:@"积分支付失败：%@", databody]];
+            return NO;
+        }
+    }
+    USER_END_LOADGING
+    [HTTPRequest alert:NETWORK_ERROR];
+    return NO;
+}
 
 + (BOOL)payByPurseFor:(NSDictionary*)dict {
     USER_BEGIN_LOADGING

@@ -73,9 +73,9 @@ static cart *instance = nil;
    if ([store creditCanPay]) {
       creditValue = [user getCreditForStoreIDAsync:[store getCurrentStoreID]];  //credit余额
       if (creditValue < creditNeeded) {
-         creditStr = [NSString stringWithFormat:@"积分付:需%.0f，现有%d", creditNeeded, creditValue];
+         creditStr = [NSString stringWithFormat:@"积分付:需%.0f，现有%ld", creditNeeded, creditValue];
       } else {
-         creditStr = [NSString stringWithFormat:@"积分付:需%.0f，现有%d", creditNeeded, creditValue];
+         creditStr = [NSString stringWithFormat:@"积分不足:需%.0f，现有%ld", creditNeeded, creditValue];
       }
    }
    
@@ -106,16 +106,8 @@ static cart *instance = nil;
             [infoLabel setBackgroundColor:[UIColor clearColor]];
             [infoView addSubview:infoLabel];
             [alert setContainerView:infoView];
-            if ([store creditCanPay]) {
-               [alert setButtonTitles:@[purseStr, creditStr, /*PING_PAYMENT_OPTION,*/ @"取消"]];
-            } else {
-               [alert setButtonTitles:@[purseStr, /*PING_PAYMENT_OPTION,*/ @"取消"]];
-            }
+            [alert setButtonTitles:@[creditStr, /*PING_PAYMENT_OPTION,*/ @"仅下单，服务员会与您当面支付"]];
             alert.delegate = self;
-            if (purseValue < totalToPay)
-               alert.disableFirstButton = YES;
-            if (creditValue < creditNeeded && [store creditCanPay])
-               alert.disableSecondButton = YES;
             alert.tag = 21;
             [alert show];
          }
@@ -153,15 +145,8 @@ static cart *instance = nil;
             [infoLabel setBackgroundColor:[UIColor clearColor]];
             [infoView addSubview:infoLabel];
             [alert setContainerView:infoView];
-            if ([store creditCanPay]) {
-               [alert setButtonTitles:@[purseStr, creditStr, /*PING_PAYMENT_OPTION,*/ @"取消"]];
-            } else {
-               [alert setButtonTitles:@[purseStr, /*PING_PAYMENT_OPTION,*/ @"取消"]];
-            }                alert.delegate = self;
-            if (purseValue < totalToPay)
-               alert.disableFirstButton = YES;
-            if (creditValue < creditNeeded && [store creditCanPay])
-               alert.disableSecondButton = YES;
+            [alert setButtonTitles:@[creditStr, /*PING_PAYMENT_OPTION,*/ @"仅下单并到前台支付"]];
+            alert.delegate = self;
             alert.tag = 21;
             [alert show];
          }
@@ -181,58 +166,40 @@ static cart *instance = nil;
    if (((CustomIOS7AlertView*)alertView).tag == 21) {
       BOOL success = NO;
       BOOL canClearOrder = NO;
-      if ([store creditCanPay]) {
-         switch (buttonIndex) {
-            case 0: //UniCafe钱包付款
-               success = [user payByPurseForAmount:totalToPay];
-               canClearOrder = YES;
-               break;
-               
-            case 1: //积分支付
+      float creditNeeded = totalToPay * 100 * creditToCent;
+      switch (buttonIndex) {
+            /*
+             case 0: //UniCafe钱包付款
+             success = [user payByPurseForAmount:totalToPay];
+             canClearOrder = YES;
+             break;
+             */
+            
+         case 0: //积分支付
+            if (creditValue < creditNeeded) {
+               UIViewController *purseView = [self.storyboard instantiateViewControllerWithIdentifier:@"purse"];
+               [self presentViewController:purseView animated:YES completion:nil];
+            } else {
                success = [user payByCreditForTotalCredit:(NSInteger)(totalToPay * 100 * creditToCent)];
                canClearOrder = YES;
-               break;
-               
-            /*
-            case 2:
-               success = [user payWithChannel:@"alipay" andAmount:totalToPay onViewController:self];
-               break;
-               
-            case 3:
-               success = [user payWithChannel:@"wx" andAmount:totalToPay onViewController:self];
-               break;
+            }
+            break;
             
-            case 4:
-               success = [user payWithChannel:@"upmp" andAmount:totalToPay onViewController:self];
-               break;
-               */
-            default:
-               break;
-         }
-      } else {
-         switch (buttonIndex) {
-            case 0: //UniCafe钱包付款
-               success = [user payByPurseForAmount:totalToPay];
-               canClearOrder = YES;
-               break;
-               
             /*
-            case 1:
-               success = [user payWithChannel:@"alipay" andAmount:totalToPay onViewController:self];
-               break;
-               
-            case 2:
-               success = [user payWithChannel:@"wx" andAmount:totalToPay onViewController:self];
-               break;
-            
-            case 3:
-               success = [user payWithChannel:@"upmp" andAmount:totalToPay onViewController:self];
-               break;
-               */
-               
-            default:
-               break;
-         }
+             case 2:
+             success = [user payWithChannel:@"alipay" andAmount:totalToPay onViewController:self];
+             break;
+             
+             case 3:
+             success = [user payWithChannel:@"wx" andAmount:totalToPay onViewController:self];
+             break;
+             
+             case 4:
+             success = [user payWithChannel:@"upmp" andAmount:totalToPay onViewController:self];
+             break;
+             */
+         default:
+            break;
       }
       if (success && canClearOrder) {
          [[orderInfo getOrder] removeAllObjects];
@@ -454,10 +421,12 @@ static cart *instance = nil;
     action:@selector(clearAll)];
     */
    
+   /*
    UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
                                                  target:self
                                                  action:@selector(clearAll)];
    [item setRightBarButtonItem:clearButton];
+    */
    
    //[item setLeftBarButtonItem:backButton];
    
@@ -468,13 +437,13 @@ static cart *instance = nil;
 }
 
 - (void)refresh {
-   /*
    UINavigationItem *item = self.navigationItem;
    
-   if ([store supportAiyidian] || [store preorder_mode]) {
+   if ([store supportAiyidian]/* || [store preorder_mode]*/) {
       UIBarButtonItem *rightButton;
-      if ([store inStore] || [store preorder_mode]) {
-         NSString *placeOrderStr = @"下单";
+      //if ([store inStore] || [store preorder_mode]) {
+      NSString *placeOrderStr = @"下单";
+         /*
          if ([store preorder_mode] && [store preorder_option_allowed] == 1)
             placeOrderStr = @"预订";
          else if ([store preorder_mode] && [store preorder_option_allowed] == 2)
@@ -483,11 +452,14 @@ static cart *instance = nil;
             [self.navigationController popViewControllerAnimated:YES];
             [HTTPRequest alert:@"抱歉，此店暂时无法外带"];
          }
-         rightButton = [[UIBarButtonItem alloc] initWithTitle:placeOrderStr
+          */
+      rightButton = [[UIBarButtonItem alloc] initWithTitle:placeOrderStr
                                                         style:UIBarButtonItemStylePlain
                                                        target:self
                                                        action:@selector(confirm_prepare)];
-      } else if (![store preorder_mode]) {
+      [item setRightBarButtonItem:rightButton];
+   }
+      /*} else if (![store preorder_mode]) {
          rightButton = [[UIBarButtonItem alloc] initWithTitle:@"店外"
                                                         style:UIBarButtonItemStylePlain
                                                        target:self
@@ -506,6 +478,8 @@ static cart *instance = nil;
       } else {
          [item setRightBarButtonItem:rightButton];
       }
+       */
+      /*
    } else {
       UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"不支持"
                                                                       style:UIBarButtonItemStylePlain
@@ -514,7 +488,7 @@ static cart *instance = nil;
       [rightButton setEnabled:NO];
       [item setRightBarButtonItem:rightButton];
    }
-    */
+       */
    
    /*
     if (self.tabBarController.selectedIndex == 2) {

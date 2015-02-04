@@ -79,6 +79,7 @@
 
 //付款底层
 +(BOOL)payByPurseFor:(NSDictionary*)dict;
++(BOOL)payByCreditFor:(NSDictionary*)dict;
 +(BOOL)payWithChannel:(NSString*)channel andInfo:(NSDictionary*)dict onViewController:(UIViewController*)vc;
 
 //咖啡墙付款

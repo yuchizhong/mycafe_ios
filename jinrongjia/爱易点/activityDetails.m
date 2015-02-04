@@ -125,7 +125,7 @@ static activityDetails *acdetailInstance = nil;
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     
     NSMutableString *header = [NSMutableString stringWithFormat:@"<hr noshade color=\"#000000\" />"];
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 10; i++) {
         NSString *title, *value;
         BOOL skip = NO;
         switch (i) {
@@ -182,6 +182,13 @@ static activityDetails *acdetailInstance = nil;
                 break;
                 
             case 8:
+                title = @"其他信息";
+                if ([self.activityInfo objectForKey:@"ac_desp"] == [NSNull null] || [[self.activityInfo objectForKey:@"ac_desp"] isEqualToString:@""])
+                    skip = YES;
+                value = [self.activityInfo objectForKey:@"ac_desp"];
+                break;
+                
+            case 9:
                 title = @"备注";
                 if ([self.activityInfo objectForKey:@"note"] == [NSNull null] || [[self.activityInfo objectForKey:@"note"] isEqualToString:@""])
                     skip = YES;
@@ -240,9 +247,23 @@ static activityDetails *acdetailInstance = nil;
         [HTTPRequest alert:@"对不起，本次活动名额已用完"];
     }
     
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"报名" message:@"请确认是否报名" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-    alert.tag = 10;
-    [alert show];
+    if ([[self.activityInfo objectForKey:@"creditPrice"] integerValue] <= 0) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"报名" message:@"请确认是否报名" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+        alert.tag = 10;
+        [alert show];
+    } else {
+        NSInteger creditValue = [user getCreditForStoreIDAsync:app_store_id];  //credit余额
+        NSInteger creditNeeded = [[self.activityInfo objectForKey:@"creditPrice"] integerValue];
+        if (creditValue < creditNeeded) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"报名并积分" message:[NSString stringWithFormat:@"请确认是否报名并用积分支付\n需%ld分，现有%ld分", creditNeeded, creditValue] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+            alert.tag = 10;
+            [alert show];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"积分不足" message:[NSString stringWithFormat:@"需%ld分，现有%ld分", creditNeeded, creditValue] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"充值说明", nil];
+            alert.tag = -2;
+            [alert show];
+        }
+    }
 }
 
 - (void)enroll {
@@ -254,8 +275,14 @@ static activityDetails *acdetailInstance = nil;
     if (purchase_result >= 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"报名成功" message:nil delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
         [alertView show];
+        
+        //pay
+        [user payByCreditFor:info];
+        
         return;
         
+        
+        /*
         if ([[self.activityInfo objectForKey:@"price"] floatValue] == 0.0f) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"等待报名批准" message:@"免费活动需等待报名批准\n您可在消费记录中查看状态" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
             [alertView show];
@@ -269,10 +296,11 @@ static activityDetails *acdetailInstance = nil;
                 purseStr = PURSE_FUND_PAY;
             }
             
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"付款" message:[NSString stringWithFormat:@"请选择付款方式\n金额：￥%.2f", [[self.activityInfo objectForKey:@"price"] floatValue]] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:purseStr, /*PING_PAYMENT_OPTION,*/ nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"付款" message:[NSString stringWithFormat:@"请选择付款方式\n金额：￥%.2f", [[self.activityInfo objectForKey:@"price"] floatValue]] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:purseStr, /*PING_PAYMENT_OPTION, nil];
             alert.tag = 20;
             [alert show];
         }
+            */
     }
 }
 
@@ -287,7 +315,7 @@ static activityDetails *acdetailInstance = nil;
         //dismiss loading
         [HTTPRequest end_loading];
         NSMutableDictionary *payInfo = [self.activityInfo mutableCopy];
-        [payInfo setObject:[NSString stringWithFormat:@"%d", transactionID] forKey:@"transaction_id"];
+        [payInfo setObject:[NSString stringWithFormat:@"%ld", transactionID] forKey:@"transaction_id"];
         [payInfo setValue:@"activity" forKey:@"mall"];
         [payInfo setObject:[user getCurrentID] forKey:@"username"];
         switch (buttonIndex) {

@@ -56,11 +56,11 @@ static purse *instance = nil;
     if (self.usingThreads > 0)
         return;
     self.usingThreads++;
-    float m = -1;
+    NSInteger m = -1;
     while (m < 0) {
-        m = [user getPurseMoneyAsync];
+        m = [user getCreditForStoreIDAsync:app_store_id/*getPurseMoneyAsync*/];
     }
-    [self.purseMoney setText:[NSString stringWithFormat:@"余额 %.2f元", m]];
+    [self.purseMoney setText:[NSString stringWithFormat:@"剩余积分：%ld分", m]];
     self.usingThreads--;
 }
 
@@ -95,7 +95,7 @@ static purse *instance = nil;
         UIView *v = [[UIView alloc] init];
         v.backgroundColor = [UIColor clearColor];
         UILabel *cz = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 100, 30)];
-        [cz setText:@"充值"];
+        [cz setText:@"积分可用来结账或购买活动"];
         [cz setFont:[UIFont boldSystemFontOfSize:15]];
         [cz setTextAlignment:NSTextAlignmentLeft];
         [cz setTextColor:[UIColor darkGrayColor]];
@@ -122,7 +122,7 @@ static purse *instance = nil;
     if (indexPath.section == 0 && indexPath.row == 0) {
         return self.infoTable.frame.size.width * 0.3;
     }
-    return 44;
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -160,28 +160,31 @@ static purse *instance = nil;
         NSString *payMethod = nil;
         switch (indexPath.row) {
             case 0:
-                payMethod = @"支付宝支付";
+                payMethod = @"方法一：到金融家咖啡厅前台充值\n地址：建外SOHO 9号别墅V0115室"/*@"支付宝支付"*/;
                 break;
                 
             case 1:
-                payMethod = @"微信支付";
+                payMethod = @"方法二：支付宝汇款至xxxxxx，并打电话至金融家咖啡厅前台充值，前台电话：(010)59001762"/*@"微信支付"*/;
                 break;
                 
+                /*
             case 2:
                 payMethod = @"银联支付";
                 break;
-                
+                 */
             default:
                 break;
         }
-        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 44)];
+        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.infoTable.frame.size.width - 20, 60)];
         [l setText:payMethod];
+        [l setNumberOfLines:0];
+        [l setLineBreakMode:NSLineBreakByCharWrapping];
         [l setTextAlignment:NSTextAlignmentLeft];
         [l setTextColor:[UIColor blackColor]];
         [l setFont:UI_TEXT_FONT];
         [cell addSubview:l];
     } else if (indexPath.section == 2) {
-        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 44)];
+        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.infoTable.frame.size.width - 20, 60)];
         [l setText:@"银行汇款"];
         [l setTextAlignment:NSTextAlignmentLeft];
         [l setTextColor:[UIColor blackColor]];
@@ -226,6 +229,9 @@ static purse *instance = nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.infoTable deselectRowAtIndexPath:indexPath animated:YES];
+    return;
+    
     if (indexPath.section == 1) {
         NSString *payMethodDesp = nil;
         switch (indexPath.row) {

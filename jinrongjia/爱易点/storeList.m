@@ -368,6 +368,15 @@ static singleItem *itemDetailViewController = nil;
 }
 
 - (void)loadWebPage {
+    UITableView *v = [[UITableView alloc] initWithFrame:mainPage.frame];
+    [v setTag:-1];
+    [v setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [v setDelegate:self];
+    [v setDataSource:self];
+    [v reloadData];
+    [mainPage addSubview:v];
+    
+    /*
     UIWebView *webview = [[UIWebView alloc] initWithFrame:mainPage.frame];
     [webview.scrollView setShowsVerticalScrollIndicator:NO];
     [webview.scrollView setShowsHorizontalScrollIndicator:NO];
@@ -376,6 +385,7 @@ static singleItem *itemDetailViewController = nil;
     NSURLRequest *webrequest =[NSURLRequest requestWithURL:[NSURL URLWithString:app_web_url]];
     [webview loadRequest:webrequest];
     [mainPage addSubview:webview];
+     */
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -413,7 +423,7 @@ static singleItem *itemDetailViewController = nil;
         alert.tag = -1;
         [alert show];
     }
-    //[user handleNotification];
+    [user handleNotification];
     //[NSThread detachNewThreadSelector:@selector(endLoadingFull) toTarget:self withObject:nil];
     if (!firstLaunch)
         USER_END_LOADGING_FULL
@@ -597,7 +607,34 @@ static singleItem *itemDetailViewController = nil;
 }
  */
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (tableView.tag == -1) {
+        return 3;
+    }
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView.tag == -1) {
+        switch (section) {
+            case 0:
+                return 1;
+                break;
+                
+            case 1: //contacts
+                return 2;
+                break;
+                
+            case 2: //time
+                return 2;
+                break;
+                
+            default:
+                break;
+        }
+        return 0;
+    }
+    
     if (stores == nil)
         return 0;
     if (stores.count == 0) {
@@ -607,6 +644,9 @@ static singleItem *itemDetailViewController = nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.tag == -1) {
+        todo
+    }
     return UI_STORE_TABLE_CELL_HEIGHT;
 }
 
@@ -627,6 +667,11 @@ static singleItem *itemDetailViewController = nil;
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier:TableSampleIdentifier];
         }
+    }
+    
+    if (tableView.tag == -1) {
+        todo
+        return cell;
     }
     
     if (stores.count == 0) {
@@ -807,6 +852,12 @@ static singleItem *itemDetailViewController = nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.tag == -1) {
+        todo
+        [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }
+    
     if (stores == nil || stores.count == 0) { //not used
         [self.storeTable deselectRowAtIndexPath:indexPath animated:YES];
         return;
