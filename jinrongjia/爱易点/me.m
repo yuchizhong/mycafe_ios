@@ -11,6 +11,7 @@
 #import "extra.h"
 #import "storeList.h"
 #import "purchased.h"
+#import "historyOrder.h"
 
 #define CELL_HEIGHT 40
 
@@ -120,7 +121,7 @@ static int infoCellID;
                 break;
                 
             case 1: //历史
-                return 0;
+                return 1;
                 break;
                 
             case 2: //钱包，积分
@@ -342,8 +343,13 @@ static int infoCellID;
     } else {
         if (indexPath.section == 1 && indexPath.row == 0) {
             //历史点单
+            historyOrder *o = [self.storyboard instantiateViewControllerWithIdentifier:@"historyOrders"];
+            [o setHistoryType:TYPE_NORMAL];
+            [self.navigationController pushViewController:o animated:YES];
+            /*
             UIViewController *historyOrderController = [self.storyboard instantiateViewControllerWithIdentifier:@"historyType"];
             [self.navigationController pushViewController:historyOrderController animated:YES];
+             */
         } else if (indexPath.section == 2 && indexPath.row == 0) {
             //积分
             UIViewController *v = [self.storyboard instantiateViewControllerWithIdentifier:@"purse"];

@@ -199,6 +199,8 @@ static cart *instance = nil;
              break;
              */
          default:
+            success = YES;
+            canClearOrder = YES;
             break;
       }
       if (success && canClearOrder) {
@@ -228,13 +230,12 @@ static cart *instance = nil;
          return;
       }
       totalToPay = total;
-      /*
+      
       if ([store needNoTableNum]) {
          [self askToPay:NO andTotal:total];
       } else {
          [self askToPay:YES andTotal:total];
       }
-       */
    }
    if (alertView.tag == 10 && buttonIndex == 1) {
       NSString *tableNumStr = [alertView textFieldAtIndex:0].text;
@@ -254,7 +255,7 @@ static cart *instance = nil;
       totalToPay = total;
       
       //提交成功，提示付款
-      //[self askToPay:YES andTotal:total];
+      [self askToPay:YES andTotal:total];
    }
    if (alertView.tag == 20) {
       BOOL success = NO;
@@ -336,7 +337,7 @@ static cart *instance = nil;
    NSString *msg = [NSString stringWithFormat:@"本单金额:%.2f\n请输入您的桌号", [orderInfo getTotalValue]];
    if ([orderInfo getOrder].count == 0)
       alert = [[UIAlertView alloc]initWithTitle:@"没有点单" message:@"您还没有点菜" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-   else if ([store getTableNum] == 0 && ![store needNoTableNum] && ![store preorder_mode]) {
+   else if (/*[store getTableNum] == 0 && */![store needNoTableNum] && ![store preorder_mode]) {
       alert = [[UIAlertView alloc]initWithTitle:@"下单确认" message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
       [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
       [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];

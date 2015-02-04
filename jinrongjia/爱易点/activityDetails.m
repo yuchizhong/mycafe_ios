@@ -254,7 +254,7 @@ static activityDetails *acdetailInstance = nil;
     } else {
         NSInteger creditValue = [user getCreditForStoreIDAsync:app_store_id];  //credit余额
         NSInteger creditNeeded = [[self.activityInfo objectForKey:@"creditPrice"] integerValue];
-        if (creditValue < creditNeeded) {
+        if (creditValue >= creditNeeded) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"报名并积分" message:[NSString stringWithFormat:@"请确认是否报名并用积分支付\n需%ld分，现有%ld分", creditNeeded, creditValue] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
             alert.tag = 10;
             [alert show];
@@ -273,11 +273,11 @@ static activityDetails *acdetailInstance = nil;
     NSInteger purchase_result = [user purchaseMallItem:info];
     transactionID = purchase_result;
     if (purchase_result >= 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"报名成功" message:nil delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-        [alertView show];
-        
         //pay
-        [user payByCreditFor:info];
+        if ([user payByCreditFor:info]) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"报名成功" message:nil delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+            [alertView show];
+        }
         
         return;
         
