@@ -378,8 +378,12 @@ static cart *instance = nil;
 
 - (void)clearAll {
    UIAlertView *alert;
-   alert = [[UIAlertView alloc]initWithTitle:@"清空" message:@"确定清空购物车？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-   alert.tag = 200;
+   if ([orderInfo getOrder].count == 0) {
+      alert = [[UIAlertView alloc]initWithTitle:@"清空" message:@"购物车已清空" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+   } else {
+      alert = [[UIAlertView alloc]initWithTitle:@"清空" message:@"确定清空购物车？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+      alert.tag = 200;
+   }
    [alert show];
 }
 
@@ -422,13 +426,6 @@ static cart *instance = nil;
     action:@selector(clearAll)];
     */
    
-   /*
-   UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
-                                                 target:self
-                                                 action:@selector(clearAll)];
-   [item setRightBarButtonItem:clearButton];
-    */
-   
    //[item setLeftBarButtonItem:backButton];
    
    //[self.navigationController.navigationBar setTranslucent:YES];
@@ -458,7 +455,13 @@ static cart *instance = nil;
                                                         style:UIBarButtonItemStylePlain
                                                        target:self
                                                        action:@selector(confirm_prepare)];
-      [item setRightBarButtonItem:rightButton];
+      
+      UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
+                                                                                   target:self
+                                                                                   action:@selector(clearAll)];
+      [item setRightBarButtonItem:clearButton];
+
+      [item setRightBarButtonItems:@[rightButton, clearButton]];
    }
       /*} else if (![store preorder_mode]) {
          rightButton = [[UIBarButtonItem alloc] initWithTitle:@"店外"
